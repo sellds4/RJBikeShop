@@ -9,8 +9,13 @@ namespace RJBikeShop.DAL
 {
     public class RJBikeContext : DbContext
     {
-        public RJBikeContext() : base("RJBikeContext", throwIfVISchema: false)
+        public RJBikeContext() : base("RJBikeContext")
         {
+        }
+
+        public static RJBikeContext Create()
+        {
+            return new RJBikeContext();
         }
 
         public DbSet<Bike> Bikes { get; set; }

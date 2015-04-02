@@ -1,0 +1,28 @@
+{
+  "name": "RJBikeShop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sellds4/RJBikeShop.git"
+  },
+  "author": "Dan Sell",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sellds4/RJBikeShop/issues"
+  },
+  "homepage": "https://github.com/sellds4/RJBikeShop",
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-clean": "^0.3.1",
+    "gulp-jade": "^1.0.0",
+    "gulp-rename": "^1.2.2",
+    "jade": "^1.9.2",
+    "jeet": "^6.1.2",
+    "stylus": "^0.50.0"
+  }
+}
