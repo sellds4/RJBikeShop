@@ -330,6 +330,9 @@ namespace RJBikeShop.Controllers
 
             var user = new ApplicationUser() { UserName = model.Email, Email = model.Email };
 
+            user.FirstName = model.FirstName;
+            user.LastName = model.LastName;
+
             IdentityResult result = await UserManager.CreateAsync(user, model.Password);
 
             if (!result.Succeeded)
