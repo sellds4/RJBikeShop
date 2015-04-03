@@ -1,0 +1,56 @@
+.dashboard-header {
+  *zoom: 1;
+  position: fixed;
+  top: 0;
+}
+.dashboard-header:before,
+.dashboard-header:after {
+  content: '';
+  display: table;
+}
+.dashboard-header:after {
+  clear: both;
+}
+.royal-jay-logo {
+  position: relative;
+  left: 0;
+}
+.logout {
+  position: relative;
+  right: 0;
+}
+.nav-bar {
+  position: fixed;
+  right: 10px;
+}
+.nav-bar .icon-container {
+  height: 50px;
+  width: 50px;
+}
+@media only screen and (max-width: 800px) {
+  .nav-bar {
+    right: 0;
+    bottom: 0;
+    height: 30px;
+  }
+  .nav-bar .icon-container {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 31.3333333333333%;
+    margin-left: 0%;
+    margin-right: 3%;
+  }
+  .nav-bar .icon-container:before,
+  .nav-bar .icon-container:after {
+    content: '';
+    display: table;
+  }
+  .nav-bar .icon-container:after {
+    clear: both;
+  }
+  .nav-bar .icon-container:last-child {
+    margin-right: 0%;
+  }
+}

@@ -3,7 +3,8 @@ var gulp = require('gulp'),
     stylus = require('gulp-stylus'),
     rename = require('gulp-rename'),
     clean = require('gulp-clean'),
-    jeet = require('jeet');
+    jeet = require('jeet'),
+    rupture = require('rupture');
 
 gulp.task('default', function() {
   // place code for your default task here
@@ -33,8 +34,12 @@ gulp.task('templates', ['cleantemplates'], function() {
         .pipe(gulp.dest('./client/app'))
         .pipe(rename('Index.cshtml'))
         .pipe(gulp.dest('./RJBikeShop/Views/Home'));
-    gulp.src('./client/jade/partials/*.styl')
-        .pipe(stylus(), jeet())
+    gulp.src('./client/stylus/main.styl')
+        .pipe(stylus(
+            {
+                use: [jeet(), rupture()]
+            }
+        ))
         .pipe(gulp.dest('./client/app/css'))
         .pipe(gulp.dest('./RJBikeShop/Static/app/css'));
 });
