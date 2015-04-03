@@ -1,0 +1,5 @@
+.login-container
+    form(name="loginForm")
+        input(type="email", placeholder="username", name="username", ng-model="username", ng-required="true")
+        input(type="password", placeholder="password", name="password", ng-model="password", ng-min="6", ng-required="true")
+        button(type="submit", ng-click="submit()", ng-disabled="loginForm.$invalid") Login

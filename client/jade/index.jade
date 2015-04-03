@@ -1,0 +1,20 @@
+doctype html
+html(ng-app="RJBikeApp")
+    head
+        meta(charset='utf8')
+        base(href='/')
+        title RJ Bike Shop
+        script(type="text/javascript", src="Static/app/js/lib/angular.js")
+        script(type="text/javascript", src="Static/app/js/lib/angular-route.js")
+        script(type="text/javascript", src="Static/app/js/lib/angular-cookies.js")
+        script(type="text/javascript", src="Static/app/js/lib/angular-local-storage.js")
+        script(type="text/javascript", src="Static/app/app.js")
+        script(type="text/javascript", src="Static/app/js/controllers/LoginCtrl.js")
+        script(type="text/javascript", src="Static/app/js/controllers/NewUserCtrl.js")
+        script(type="text/javascript", src="Static/app/js/controllers/DashboardCtrl.js")
+        script(type="text/javascript", src="Static/app/js/services/AccountService.js")
+        script(type="text/javascript", src="Static/app/js/services/AuthInterceptorService.js")
+        script(type="text/javascript", src="Static/app/js/services/LoginService.js")
+        script(type="text/javascript", src="Static/app/js/services/BikeService.js")
+    body
+        div(ng-view)

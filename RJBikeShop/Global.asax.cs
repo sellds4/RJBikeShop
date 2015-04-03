@@ -1,5 +1,7 @@
-﻿using System;
+﻿using RJBikeShop.DAL;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
@@ -18,6 +20,9 @@ namespace RJBikeShop
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            Database.SetInitializer(new RJBikeInitializer());
+            RJBikeContext db = new RJBikeContext();
+            db.Database.Initialize(true);
         }
     }
 }

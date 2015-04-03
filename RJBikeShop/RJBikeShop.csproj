@@ -240,6 +240,22 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <Content Include="Static\app\app.js" />
+    <Content Include="Static\app\index.html" />
+    <Content Include="Static\app\js\controllers\DashboardCtrl.js" />
+    <Content Include="Static\app\js\controllers\LoginCtrl.js" />
+    <Content Include="Static\app\js\controllers\NewUserCtrl.js" />
+    <Content Include="Static\app\js\lib\angular-cookies.js" />
+    <Content Include="Static\app\js\lib\angular-local-storage.js" />
+    <Content Include="Static\app\js\lib\angular-route.js" />
+    <Content Include="Static\app\js\lib\angular.js" />
+    <Content Include="Static\app\js\services\AccountService.js" />
+    <Content Include="Static\app\js\services\AuthInterceptorService.js" />
+    <Content Include="Static\app\js\services\BikeService.js" />
+    <Content Include="Static\app\js\services\LoginService.js" />
+    <Content Include="Static\app\partials\dashboard.html" />
+    <Content Include="Static\app\partials\login.html" />
+    <Content Include="Static\app\partials\newuser.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -254,11 +270,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Home\" />
+    <Folder Include="Static\app\js\directives\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
