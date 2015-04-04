@@ -328,7 +328,9 @@ namespace RJBikeShop.Controllers
                 return BadRequest(ModelState);
             }
 
-            var user = new ApplicationUser() { UserName = model.Email, Email = model.Email };
+            var userName = HttpUtility.HtmlEncode(model.FirstName.ToLower()[0] + model.LastName);
+
+            var user = new ApplicationUser() { UserName = userName, Email = model.Email };
 
             user.FirstName = model.FirstName;
             user.LastName = model.LastName;
@@ -342,6 +344,7 @@ namespace RJBikeShop.Controllers
 
             return Ok();
         }
+
 
         // POST api/Account/RegisterExternal
         [OverrideAuthentication]

@@ -1,4 +1,5 @@
-﻿using RJBikeShop.Models;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+using RJBikeShop.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -7,9 +8,9 @@ using System.Web;
 
 namespace RJBikeShop.DAL
 {
-    public class RJBikeContext : DbContext
+    public class RJBikeContext : IdentityDbContext<ApplicationUser>
     {
-        public RJBikeContext() : base("RJBikeContext")
+        public RJBikeContext() : base("RJBikeContext", throwIfV1Schema: false)
         {
         }
 

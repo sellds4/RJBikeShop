@@ -10,7 +10,7 @@ angular.module('RJBikeApp.controllers').controller('NewUserCtrl', ['$scope', '$l
             LastName: s.lastname,
             Email: s.email,
             Password: s.password,
-            ConfirmPassword: s.password
+            ConfirmPassword: s.confirmpassword
         };
         Account.register(req).then(function(success) {
             $location.path('/dashboard');
