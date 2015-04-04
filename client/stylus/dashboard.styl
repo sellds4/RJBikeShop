@@ -17,13 +17,18 @@ table
     margin-bottom: 10px
 
 +desktop()
+    .bikes-container
+        col(7/8, offset: 1/8)
     .card-container
         col(1/3, cycle:3)
-        
 +tablet()
+    .bikes-container
+        col(7/8, offset: 1/8)
     .card-container
         col(1/2, uncycle: 3, cycle: 2)
 
 +mobile()
+    .bikes-container
+        width: 100%
     .card-container
         stack()
