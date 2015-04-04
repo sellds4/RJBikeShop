@@ -117,9 +117,17 @@ table {
 }
 .bikes-list table tr {
   height: 30px;
+  cursor: pointer;
 }
 .bikes-list table tr td {
   text-align: center;
+}
+.delete-col {
+  width: 60px;
+}
+.red-x {
+  height: 20px;
+  padding-top: 4px;
 }
 .card-container {
   border-radius: 5px;

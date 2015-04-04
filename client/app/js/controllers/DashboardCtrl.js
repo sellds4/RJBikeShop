@@ -26,4 +26,15 @@ angular.module('RJBikeApp.controllers').controller('DashboardCtrl', ['$scope', '
         });
     };
 
+    $scope.deleteBike = function() {
+        var confirmDelete = confirm("Are you sure you want to delete this bike?");
+        if(confirmDelete) {
+            Bike.deleteBike().then(function() {
+
+            });
+        } else {
+            return;
+        }
+    };
+
 }]);

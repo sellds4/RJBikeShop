@@ -26,6 +26,7 @@ dashboard-header
                     th Price
                     th Color
                     th Gender
+                    th.delete-col Delete?
                 tr
                     td Trek
                     td Fastone
@@ -35,6 +36,8 @@ dashboard-header
                     td $1,000.00
                     td Red
                     td Neutral
+                    td
+                        img.red-x(ng-click="deleteBike()", src="/Static/app/img/red-x.png")
                 tr
                     td Trek
                     td Fastone
