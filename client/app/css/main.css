@@ -1,110 +1,6 @@
-.dashboard-header {
-  *zoom: 1;
-  position: relative;
-  top: 0;
-  left: 0;
+.logo-container {
   width: 100%;
-  background-color: #d3d3d3;
-}
-.dashboard-header:before,
-.dashboard-header:after {
-  content: '';
-  display: table;
-}
-.dashboard-header:after {
-  clear: both;
-}
-.dashboard-header .dashboard-header-container {
-  *zoom: 1;
-  width: auto;
-  max-width: 980px;
-  float: none;
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 0;
-  padding-right: 0;
-  padding: 10px 10px 10px 0;
-}
-.dashboard-header .dashboard-header-container:before,
-.dashboard-header .dashboard-header-container:after {
-  content: '';
-  display: table;
-}
-.dashboard-header .dashboard-header-container:after {
-  clear: both;
-}
-.dashboard-header .royal-jay-container .royal-jay-logo,
-.dashboard-header .royal-jay-container .royal-jay-text {
-  float: left;
-}
-.dashboard-header .royal-jay-container .royal-jay-text {
-  margin: 2px 0 0 9px;
-}
-.dashboard-header .royal-jay-container .royal-jay-logo {
-  height: 40px;
-}
-.dashboard-header .logout {
-  font-weight: bold;
-  color: #00008b;
-  float: right;
-  padding-top: 14px;
-  cursor: pointer;
-}
-.dashboard-controls {
-  position: fixed;
-  margin: 10px 0 0 20px;
-}
-.dashboard-controls .control-container {
-  background-color: #d3d3d3;
-  height: 50px;
-  width: 50px;
-  margin-bottom: 10px;
-  cursor: pointer;
-}
-.dashboard-controls .control-container img {
-  padding-top: 3px;
-  display: table-cell;
   margin: 0 auto;
-  width: 45px;
-}
-.dashboard-controls .control-container .bike-icon {
-  padding-top: 12px;
-}
-.nav-bar {
-  position: fixed;
-  right: 10px;
-}
-.nav-bar .icon-container {
-  height: 50px;
-  width: 50px;
-}
-@media only screen and (max-width: 800px) {
-  .nav-bar {
-    right: 0;
-    bottom: 0;
-    height: 30px;
-  }
-  .nav-bar .icon-container {
-    *zoom: 1;
-    float: left;
-    clear: none;
-    text-align: inherit;
-    width: 31.3333333333333%;
-    margin-left: 0%;
-    margin-right: 3%;
-  }
-  .nav-bar .icon-container:before,
-  .nav-bar .icon-container:after {
-    content: '';
-    display: table;
-  }
-  .nav-bar .icon-container:after {
-    clear: both;
-  }
-  .nav-bar .icon-container:last-child {
-    margin-right: 0%;
-  }
 }
 table {
   width: 100%;
@@ -117,7 +13,6 @@ table {
 }
 .bikes-list table tr {
   height: 30px;
-  cursor: pointer;
 }
 .bikes-list table tr td {
   text-align: center;
@@ -125,9 +20,11 @@ table {
 .delete-col {
   width: 60px;
 }
-.red-x {
+.red-x,
+.edit-icon {
   height: 20px;
   padding-top: 4px;
+  cursor: pointer;
 }
 .card-container {
   position: relative;
@@ -137,11 +34,19 @@ table {
   box-sizing: border-box;
   margin-bottom: 10px;
 }
-.card-container .red-x-small {
-  height: 10px;
+.card-container .corner-icons {
+  top: 5px;
+  right: 5px;
   position: absolute;
-  top: 2px;
-  right: 2px;
+}
+.card-container .red-x-small,
+.card-container .edit-icon-small {
+  float: right;
+  height: 15px;
+  cursor: pointer;
+}
+.card-container .edit-icon-small {
+  margin-right: 7px;
 }
 @media only screen and (min-width: 1050px) {
   .bikes-container {
@@ -242,7 +147,7 @@ table {
     clear: both;
   }
 }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 600px) {
   .bikes-container {
     width: 100%;
   }
@@ -259,6 +164,145 @@ table {
   }
   .card-container:last-child {
     margin-right: auto;
+  }
+}
+.dashboard-header {
+  *zoom: 1;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #d3d3d3;
+}
+.dashboard-header:before,
+.dashboard-header:after {
+  content: '';
+  display: table;
+}
+.dashboard-header:after {
+  clear: both;
+}
+.dashboard-header .dashboard-header-container {
+  *zoom: 1;
+  width: auto;
+  max-width: 980px;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+  padding: 10px 10px 10px 0;
+}
+.dashboard-header .dashboard-header-container:before,
+.dashboard-header .dashboard-header-container:after {
+  content: '';
+  display: table;
+}
+.dashboard-header .dashboard-header-container:after {
+  clear: both;
+}
+.dashboard-header .royal-jay-container .royal-jay-logo,
+.dashboard-header .royal-jay-container .royal-jay-text {
+  float: left;
+}
+.dashboard-header .royal-jay-container .royal-jay-text {
+  margin: 2px 0 0 9px;
+}
+.dashboard-header .royal-jay-container .royal-jay-logo {
+  height: 40px;
+}
+.dashboard-header .logout {
+  font-weight: bold;
+  color: #00008b;
+  float: right;
+  padding-top: 14px;
+  cursor: pointer;
+}
+.dashboard-controls {
+  position: fixed;
+  margin: 10px 0 0 20px;
+  z-index: 100;
+}
+.dashboard-controls .control-container {
+  background-color: #d3d3d3;
+  height: 50px;
+  width: 50px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.dashboard-controls .control-container img {
+  padding-top: 3px;
+  display: table-cell;
+  margin: 0 auto;
+  width: 45px;
+}
+.dashboard-controls .control-container .bike-icon {
+  padding-top: 12px;
+}
+@media only screen and (max-width: 600px) {
+  .dashboard-controls {
+    background-color: #a9a9a9;
+    bottom: 0;
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+  }
+  .dashboard-controls .control-container {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 22.75%;
+    margin-left: 0%;
+    margin-right: 3%;
+    margin-bottom: 0;
+  }
+  .dashboard-controls .control-container:before,
+  .dashboard-controls .control-container:after {
+    content: '';
+    display: table;
+  }
+  .dashboard-controls .control-container:after {
+    clear: both;
+  }
+  .dashboard-controls .control-container:last-child {
+    margin-right: 0%;
+  }
+}
+.nav-bar {
+  position: fixed;
+  right: 10px;
+}
+.nav-bar .icon-container {
+  height: 50px;
+  width: 50px;
+}
+@media only screen and (max-width: 600px) {
+  .nav-bar {
+    right: 0;
+    bottom: 0;
+    height: 30px;
+  }
+  .nav-bar .icon-container {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 31.3333333333333%;
+    margin-left: 0%;
+    margin-right: 3%;
+  }
+  .nav-bar .icon-container:before,
+  .nav-bar .icon-container:after {
+    content: '';
+    display: table;
+  }
+  .nav-bar .icon-container:after {
+    clear: both;
+  }
+  .nav-bar .icon-container:last-child {
+    margin-right: 0%;
   }
 }
 body {

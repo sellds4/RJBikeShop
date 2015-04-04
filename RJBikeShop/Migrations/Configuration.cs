@@ -12,8 +12,8 @@ namespace RJBikeShop.Migrations
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(RJBikeShop.DAL.RJBikeContext context)
-        {
+        // protected override void Seed(RJBikeShop.DAL.RJBikeContext context)
+        // {
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
@@ -26,6 +26,6 @@ namespace RJBikeShop.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
-        }
+        // }
     }
 }

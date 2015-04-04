@@ -7,14 +7,15 @@ dashboard-header
             input.search-box
         .add-bikes(ng-show="view.addBike")
             form(ng-submit="addBiketoDB()")
-                input(ng-model="bike.make")
-                input(ng-model="bike.model")
-                input(ng-model="bike.type")
-                input(ng-model="bike.size")
-                input(ng-model="bike.year")
-                input(ng-model="bike.price")
-                input(ng-model="bike.color")
-                input(ng-model="bike.gender")
+                input(ng-model="newBike.make")
+                input(ng-model="newBike.model")
+                input(ng-model="newBike.type")
+                input(ng-model="newBike.size")
+                input(ng-model="newBike.year")
+                input(ng-model="newBike.price")
+                input(ng-model="newBike.cost")
+                input(ng-model="newBike.color")
+                input(ng-model="newBike.gender")
         .bikes-list(ng-show="view.list")
             table
                 tr
@@ -26,6 +27,7 @@ dashboard-header
                     th Price
                     th Color
                     th Gender
+                    th.edit-col Edit?
                     th.delete-col Delete?
                 tr
                     td Trek
@@ -37,7 +39,9 @@ dashboard-header
                     td Red
                     td Neutral
                     td
-                        img.red-x(ng-click="deleteBike()", src="/Static/app/img/red-x.png")
+                        img.edit-icon(ng-click="editBike(bike)", src="/Static/app/img/edit-icon.png")
+                    td
+                        img.red-x(ng-click="deleteBike(bike.Id)", src="/Static/app/img/red-x.png")
                 tr
                     td Trek
                     td Fastone
@@ -1615,7 +1619,9 @@ dashboard-header
                     td Neutral
         .bikes-cards(ng-show="!view.list")
             .card-container
-                img.red-x-small(ng-click="deleteBike()", src="/Static/app/img/red-x.png")
+                .corner-icons
+                    img.red-x-small(ng-click="deleteBike(bike.Id)", src="/Static/app/img/red-x.png")
+                    img.edit-icon-small(ng-click="editBike(bike)", src="/Static/app/img/edit-icon.png")
                 .bike-pic(style="height:150px")
                 .description-container
                     table

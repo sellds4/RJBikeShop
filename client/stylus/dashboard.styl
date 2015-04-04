@@ -11,7 +11,7 @@ table
                 text-align center
 .delete-col
     width 60px
-.red-x
+.red-x, .edit-icon
     height 20px
     padding-top 4px
     cursor: pointer
@@ -22,12 +22,16 @@ table
     box-shadow 3px 3px 5px #888888
     box-sizing border-box
     margin-bottom: 10px
-    .red-x-small
-        height 12px
-        position absolute
+    .corner-icons
         top 5px
         right 5px
-        cursor: pointer
+        position absolute
+    .red-x-small, .edit-icon-small
+        float right
+        height 15px
+        cursor pointer
+    .edit-icon-small
+        margin-right: 7px
 +desktop()
     .bikes-container
         col(7/8, offset: 1/8)
@@ -39,7 +43,7 @@ table
     .card-container
         col(1/2, uncycle: 3, cycle: 2)
 
-+mobile()
++tablet-portrait-below()
     .bikes-container
         width: 100%
     .card-container

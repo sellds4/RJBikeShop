@@ -13,7 +13,7 @@ namespace RJBikeShop.Models
         }
 
         public int Id { get; set; }
-        public string Brand { get; set; }
+        public string Make { get; set; }
         public string Model { get; set; }
         public int FrameSize { get; set; }
         public int Year { get; set; }
@@ -22,7 +22,6 @@ namespace RJBikeShop.Models
         public BikeType BikeType { get; set; }
         public Color Color { get; set; }
         public Gender Gender { get; set; }
-        public Status Status { get; set; }
         public bool Sold { get; set; }
         public DateTime? DateSold { get; set; }
     }
