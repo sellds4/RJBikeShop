@@ -1,32 +1,121 @@
-.logo-container {
+.login-container {
   width: 100%;
+  margin-top: 50px;
+}
+.login-container .login-intro,
+.login-container .motto {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.login-container .login-form-container,
+.login-container .logo-container {
   margin: 0 auto;
+}
+.login-container .login-intro,
+.login-container .login-form-container input {
+  font-size: 18px;
+}
+.login-container input,
+.login-container .button-container {
+  display: block;
+  clear: both;
+  float: none;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+.login-container input:first-child,
+.login-container .button-container:first-child {
+  margin-left: auto;
+}
+.login-container input:last-child,
+.login-container .button-container:last-child {
+  margin-right: auto;
+}
+@media only screen and (max-width: 600px) {
+  .login-container input,
+  .login-container .button-container {
+    width: 80%;
+  }
+}
+.login-container .login-form-container form {
+  margin: 0 auto;
+}
+.login-container .login-form-container input {
+  text-indent: 5px;
+  margin-bottom: 10px;
+}
+.login-container .login-form-container .button-container {
+  *zoom: 1;
+}
+.login-container .login-form-container .button-container:before,
+.login-container .login-form-container .button-container:after {
+  content: '';
+  display: table;
+}
+.login-container .login-form-container .button-container:after {
+  clear: both;
+}
+.login-container .login-form-container .button-container button {
+  float: right;
+}
+.login-container .logo-container img {
+  display: block;
+  margin: 20px auto 0px;
+}
+@media only screen and (max-width: 600px) {
+  .login-container .logo-container img {
+    height: 40px;
+    margin-bottom: 10px;
+  }
+}
+.login-container .logo-container .motto {
+  font-size: 30px;
+}
+.login-container .logo-container .motto span {
+  color: #005f9e;
+  font-style: italic;
 }
 table {
   width: 100%;
 }
-.bikes-list {
+.bikes-container .search-container {
+  margin: 15px 0;
+  padding: 0 6px 0 2px;
+}
+.bikes-container .search-container img {
+  height: 20px;
+  position: absolute;
+  padding: 4px 0 0 5px;
+}
+.bikes-container .search-container input {
+  width: 100%;
+  line-height: 24px;
+  text-indent: 30px;
+}
+.bikes-container .bikes-list {
   overflow-x: scroll;
 }
-.bikes-list table :nth-child(odd) {
+.bikes-container .bikes-list table :nth-child(odd) {
   background-color: #d3d3d3;
 }
-.bikes-list table tr {
+.bikes-container .bikes-list table tr {
   height: 30px;
 }
-.bikes-list table tr td {
+.bikes-container .bikes-list table tr td {
   text-align: center;
 }
-.delete-col {
+.bikes-container .delete-col {
   width: 60px;
 }
-.red-x,
-.edit-icon {
+.bikes-container .red-x,
+.bikes-container .edit-icon {
   height: 20px;
   padding-top: 4px;
   cursor: pointer;
 }
-.card-container {
+.bikes-container .card-container {
   position: relative;
   border-radius: 5px;
   border: 1px solid #a9a9a9;
@@ -34,18 +123,18 @@ table {
   box-sizing: border-box;
   margin-bottom: 10px;
 }
-.card-container .corner-icons {
+.bikes-container .card-container .corner-icons {
   top: 5px;
   right: 5px;
   position: absolute;
 }
-.card-container .red-x-small,
-.card-container .edit-icon-small {
+.bikes-container .card-container .red-x-small,
+.bikes-container .card-container .edit-icon-small {
   float: right;
   height: 15px;
   cursor: pointer;
 }
-.card-container .edit-icon-small {
+.bikes-container .card-container .edit-icon-small {
   margin-right: 7px;
 }
 @media only screen and (min-width: 1050px) {
@@ -214,7 +303,7 @@ table {
 }
 .dashboard-header .logout {
   font-weight: bold;
-  color: #00008b;
+  color: #005f9e;
   float: right;
   padding-top: 14px;
   cursor: pointer;
@@ -315,6 +404,18 @@ h4,
 p,
 span {
   margin: 0;
+}
+input {
+  border-radius: 5px;
+  border: 1px solid #a9a9a9;
+}
+button {
+  color: #fff;
+  font-size: 16px;
+  background-color: #005f9e;
+  border-radius: 5px;
+  padding: 7px 20px;
+  cursor: pointer;
 }
 .page-content {
   *zoom: 1;

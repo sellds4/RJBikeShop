@@ -3,8 +3,8 @@ dashboard-header
     dashboard-control
     .bikes-container
         .search-container
-            img.search-icon
-            input.search-box
+            img(src="/Static/app/img/search-icon.png")
+            input
         .add-bikes(ng-show="view.addBike")
             form(ng-submit="addBiketoDB()")
                 input(ng-model="newBike.make")

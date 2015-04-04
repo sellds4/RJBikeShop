@@ -8,7 +8,7 @@ angular.module('RJBikeApp.directives')
             templateUrl:'./Static/app/partials/dashboard-header.html',
             link: function (scope, elem, attrs) {
                 scope.logout = function() {
-                    Login.logout.then(function() {
+                    Login.logout().then(function() {
                         $location.path('/');
                     });
                 };

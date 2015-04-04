@@ -1,37 +1,49 @@
 table
     width 100%
-.bikes-list
-    overflow-x scroll
-    table
-        :nth-child(odd)
-            background-color: lightgrey
-        tr
-            height 30px
-            td
-                text-align center
-.delete-col
-    width 60px
-.red-x, .edit-icon
-    height 20px
-    padding-top 4px
-    cursor: pointer
-.card-container
-    position relative
-    border-radius 5px
-    border 1px solid darkgrey
-    box-shadow 3px 3px 5px #888888
-    box-sizing border-box
-    margin-bottom: 10px
-    .corner-icons
-        top 5px
-        right 5px
-        position absolute
-    .red-x-small, .edit-icon-small
-        float right
-        height 15px
-        cursor pointer
-    .edit-icon-small
-        margin-right: 7px
+.bikes-container
+    .search-container
+        margin 15px 0
+        padding 0 6px 0 2px
+        img
+            height 20px
+            position absolute
+            padding: 4px 0 0 5px
+        input
+            width 100%
+            line-height 24px
+            text-indent 30px
+    .bikes-list
+        overflow-x scroll
+        table
+            :nth-child(odd)
+                background-color: lightgrey
+            tr
+                height 30px
+                td
+                    text-align center
+    .delete-col
+        width 60px
+    .red-x, .edit-icon
+        height 20px
+        padding-top 4px
+        cursor: pointer
+    .card-container
+        position relative
+        border-radius 5px
+        border 1px solid darkgrey
+        box-shadow 3px 3px 5px #888888
+        box-sizing border-box
+        margin-bottom: 10px
+        .corner-icons
+            top 5px
+            right 5px
+            position absolute
+        .red-x-small, .edit-icon-small
+            float right
+            height 15px
+            cursor pointer
+        .edit-icon-small
+            margin-right: 7px
 +desktop()
     .bikes-container
         col(7/8, offset: 1/8)
