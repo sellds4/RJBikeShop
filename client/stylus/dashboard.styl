@@ -1,0 +1,29 @@
+table
+    width 100%
+.bikes-list
+    overflow-x scroll
+    table
+        :nth-child(odd)
+            background-color: lightgrey
+        tr
+            height 30px
+            td
+                text-align center
+.card-container
+    border-radius 5px
+    border 1px solid darkgrey
+    box-shadow 3px 3px 5px #888888
+    box-sizing border-box
+    margin-bottom: 10px
+
++desktop()
+    .card-container
+        col(1/3, cycle:3)
+        
++tablet()
+    .card-container
+        col(1/2, uncycle: 3, cycle: 2)
+
++mobile()
+    .card-container
+        stack()

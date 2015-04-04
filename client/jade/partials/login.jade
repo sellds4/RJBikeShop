@@ -1,5 +1,9 @@
-.login-container
-    form(name="loginForm", ng-submit="submit()")
-        input(type="text", placeholder="username", name="username", ng-model="username", ng-required="true")
-        input(type="password", placeholder="password", name="password", ng-model="password", ng-min="6", ng-required="true")
-        button(type="submit", ng-disabled="loginForm.$invalid") Login
+.page-content
+    .login-intro Welcome, Please log in.
+    .login-container
+        form(name="loginForm", ng-submit="submit()")
+            input(type="text", placeholder="username", name="username", ng-model="username", ng-required="true")
+            input(type="password", placeholder="password", name="password", ng-model="password", ng-min="6", ng-required="true")
+            button(type="submit", ng-disabled="loginForm.$invalid") Login
+    .logo-container
+        img.royal-jay-logo(src="/Static/app/img/royal-jay-logo.png")

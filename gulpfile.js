@@ -4,7 +4,10 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     clean = require('gulp-clean'),
     jeet = require('jeet'),
-    rupture = require('rupture');
+    rupture = require('rupture'),
+    paths = {
+        templates: ['./client/jade/index.jade', './client/jade/partials/*.jade', './client/stylus/*.styl']
+    };
 
 gulp.task('default', function() {
   // place code for your default task here
@@ -48,4 +51,8 @@ gulp.task('appdev', ['clean', 'templates'], function() {
     return gulp.src('./client/app/**/*', {
         base: 'client'
     }).pipe(gulp.dest('./RJBikeShop/Static'));
+});
+
+gulp.task('watch', function() {
+    gulp.watch(paths.templates, ['templates']);
 });

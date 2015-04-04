@@ -1,7 +1,10 @@
 .dashboard-header {
   *zoom: 1;
-  position: fixed;
+  position: relative;
   top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #d3d3d3;
 }
 .dashboard-header:before,
 .dashboard-header:after {
@@ -11,13 +14,41 @@
 .dashboard-header:after {
   clear: both;
 }
-.royal-jay-logo {
-  position: relative;
-  left: 0;
+.dashboard-header .dashboard-header-container {
+  *zoom: 1;
+  width: auto;
+  max-width: 980px;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+  padding: 10px 10px 10px 0;
 }
-.logout {
-  position: relative;
-  right: 0;
+.dashboard-header .dashboard-header-container:before,
+.dashboard-header .dashboard-header-container:after {
+  content: '';
+  display: table;
+}
+.dashboard-header .dashboard-header-container:after {
+  clear: both;
+}
+.dashboard-header .royal-jay-container .royal-jay-logo,
+.dashboard-header .royal-jay-container .royal-jay-text {
+  float: left;
+}
+.dashboard-header .royal-jay-container .royal-jay-text {
+  margin: 2px 0 0 9px;
+}
+.dashboard-header .royal-jay-container .royal-jay-logo {
+  height: 40px;
+}
+.dashboard-header .logout {
+  font-weight: bold;
+  color: dark-blue;
+  float: right;
+  padding-top: 14px;
 }
 .nav-bar {
   position: fixed;
@@ -53,4 +84,131 @@
   .nav-bar .icon-container:last-child {
     margin-right: 0%;
   }
+}
+table {
+  width: 100%;
+}
+.bikes-list {
+  overflow-x: scroll;
+}
+.bikes-list table :nth-child(odd) {
+  background-color: #d3d3d3;
+}
+.bikes-list table tr {
+  height: 30px;
+}
+.bikes-list table tr td {
+  text-align: center;
+}
+.card-container {
+  border-radius: 5px;
+  border: 1px solid #a9a9a9;
+  box-shadow: 3px 3px 5px #888;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+@media only screen and (min-width: 1050px) {
+  .card-container {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 31.3333333333333%;
+    margin-left: 0%;
+    margin-right: 3%;
+  }
+  .card-container:before,
+  .card-container:after {
+    content: '';
+    display: table;
+  }
+  .card-container:after {
+    clear: both;
+  }
+  .card-container:nth-child(3n) {
+    margin-right: 0%;
+    float: right;
+  }
+  .card-container:nth-child(3n+1) {
+    clear: both;
+  }
+}
+@media only screen and (min-width: 400px) and (max-width: 1050px) {
+  .card-container {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 48.5%;
+    margin-left: 0%;
+    margin-right: 3%;
+  }
+  .card-container:before,
+  .card-container:after {
+    content: '';
+    display: table;
+  }
+  .card-container:after {
+    clear: both;
+  }
+  .card-container:nth-child(3n) {
+    margin-right: 3%;
+    float: left;
+  }
+  .card-container:nth-child(3n+1) {
+    clear: none;
+  }
+  .card-container:nth-child(2n) {
+    margin-right: 0%;
+    float: right;
+  }
+  .card-container:nth-child(2n+1) {
+    clear: both;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .card-container {
+    display: block;
+    clear: both;
+    float: none;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .card-container:first-child {
+    margin-left: auto;
+  }
+  .card-container:last-child {
+    margin-right: auto;
+  }
+}
+body {
+  margin: 0;
+}
+h1,
+h2,
+h3,
+h4,
+p,
+span {
+  margin: 0;
+}
+.page-content {
+  *zoom: 1;
+  width: auto;
+  max-width: 980px;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+.page-content:before,
+.page-content:after {
+  content: '';
+  display: table;
+}
+.page-content:after {
+  clear: both;
 }
