@@ -3,7 +3,7 @@
         img.bike-icon(src="/Static/app/img/bike.png")
     .control-container
         img(src="/Static/app/img/double-arrow.png", ng-click="view.list = !view.list")
-    .control-container
+    .control-container(ng-click="view.addBike = !view.addBike")
         img(src="/Static/app/img/plus.png")
-    .control-container
+    .control-container(ng-click="goToNewUser()")
         img(src="/Static/app/img/bikegear.png")

@@ -7,7 +7,9 @@ angular.module('RJBikeApp.directives')
             replace: true,
             templateUrl:'./Static/app/partials/dashboard-control.html',
             link: function (scope, elem, attrs) {
-                
+                scope.goToNewUser = function() {
+                    $location.path('/newuser');
+                };
             }
         };
     }]);

@@ -5,6 +5,16 @@ dashboard-header
         .search-container
             img.search-icon
             input.search-box
+        .add-bikes(ng-show="view.addBike")
+            form(ng-submit="addBiketoDB()")
+                input(ng-model="bike.make")
+                input(ng-model="bike.model")
+                input(ng-model="bike.type")
+                input(ng-model="bike.size")
+                input(ng-model="bike.year")
+                input(ng-model="bike.price")
+                input(ng-model="bike.color")
+                input(ng-model="bike.gender")
         .bikes-list(ng-show="view.list")
             table
                 tr

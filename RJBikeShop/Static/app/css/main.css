@@ -49,6 +49,7 @@
   color: #00008b;
   float: right;
   padding-top: 14px;
+  cursor: pointer;
 }
 .dashboard-controls {
   position: fixed;

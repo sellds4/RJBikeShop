@@ -5,7 +5,18 @@ angular.module('RJBikeApp.controllers').controller('DashboardCtrl', ['$scope', '
     
     angular.extend($scope, {
         view: {
-            list: true
+            list: true,
+            addBike: false
+        },
+        bike: {
+            make: null,
+            model: null,
+            type: null,
+            size: null,
+            year: null,
+            price: null,
+            color: null,
+            gender: null
         }
     });
 
