@@ -7,7 +7,6 @@ table
             background-color: lightgrey
         tr
             height 30px
-            cursor: pointer
             td
                 text-align center
 .delete-col
@@ -15,13 +14,20 @@ table
 .red-x
     height 20px
     padding-top 4px
+    cursor: pointer
 .card-container
+    position relative
     border-radius 5px
     border 1px solid darkgrey
     box-shadow 3px 3px 5px #888888
     box-sizing border-box
     margin-bottom: 10px
-
+    .red-x-small
+        height 12px
+        position absolute
+        top 5px
+        right 5px
+        cursor: pointer
 +desktop()
     .bikes-container
         col(7/8, offset: 1/8)

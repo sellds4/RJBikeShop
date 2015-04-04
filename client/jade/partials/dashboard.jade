@@ -1615,6 +1615,7 @@ dashboard-header
                     td Neutral
         .bikes-cards(ng-show="!view.list")
             .card-container
+                img.red-x-small(ng-click="deleteBike()", src="/Static/app/img/red-x.png")
                 .bike-pic(style="height:150px")
                 .description-container
                     table

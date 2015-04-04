@@ -130,11 +130,18 @@ table {
   padding-top: 4px;
 }
 .card-container {
+  position: relative;
   border-radius: 5px;
   border: 1px solid #a9a9a9;
   box-shadow: 3px 3px 5px #888;
   box-sizing: border-box;
   margin-bottom: 10px;
+}
+.card-container .red-x-small {
+  height: 10px;
+  position: absolute;
+  top: 2px;
+  right: 2px;
 }
 @media only screen and (min-width: 1050px) {
   .bikes-container {
