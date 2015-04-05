@@ -38,7 +38,7 @@ angular.module('RJBikeApp.services').service('BikeService', ['$q', '$http', func
 
     // DELETES
     this.deleteBike = function(bikeID) {
-        var d = $q.defer();
+        var d = $q.defer(),
             url = '/api/Bike/' + bikeID;
         $http.delete(url).success(function(data) {
             d.resolve(data);

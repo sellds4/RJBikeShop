@@ -45,6 +45,7 @@ angular.module('RJBikeApp.controllers').controller('DashboardCtrl', ['$scope', '
             for(var key in s.newBike) {
                 s.newBike[key] = null;
             }
+            alert("Bike Added!")
         });
     };
 
@@ -63,7 +64,7 @@ angular.module('RJBikeApp.controllers').controller('DashboardCtrl', ['$scope', '
         var confirmDelete = confirm("Are you sure you want to delete this bike?");
         if(confirmDelete) {
             Bike.deleteBike(bikeID).then(function() {
-                
+                alert("The selected bike has been deleted.")
             });
         } else {
             return;
