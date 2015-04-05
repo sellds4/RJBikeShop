@@ -1,0 +1,38 @@
+.login-container, .new-user-container
+    width 100%
+    margin-top 50px
+    .intro, .motto
+        text-align center
+        margin-bottom 10px
+    .form-container, .logo-container
+        margin 0 auto
+    .intro
+        font-size 18px
+    input, .button-container
+        stack()
+        width 40%
+        +tablet-portrait-below()
+                width 80%
+    .form-container 
+        form
+            margin 0 auto
+        input
+            text-indent 5px
+            margin-bottom 10px
+        .button-container
+            cf()
+            button
+                float right
+    .logo-container
+        img
+            display block
+            margin 20px auto 0px
+            +tablet-portrait-below()
+                height 40px
+                margin-bottom 10px
+        .motto    
+            font-size 30px
+        .motto span
+            color $dark-blue
+            font-style italic
+    

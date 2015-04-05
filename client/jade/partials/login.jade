@@ -1,7 +1,7 @@
 .page-content
     .login-container
-        .login-intro Welcome, Please log in.
-        .login-form-container
+        .intro Welcome, Please log in.
+        .form-container
             form(name="loginForm", ng-submit="submit()")
                 input(type="text", placeholder="username", name="username", ng-model="username", ng-required="true")
                 input(type="password", placeholder="password", name="password", ng-model="password", ng-min="6", ng-required="true")

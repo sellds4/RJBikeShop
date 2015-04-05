@@ -6,9 +6,9 @@ angular.module('RJBikeApp.controllers').controller('LoginCtrl', ['$scope', '$loc
     $scope.submit = function() {
         var req = "userName=" + $scope.username + "&password=" + $scope.password + "&grant_type=password";
         Login.login(req).then(function(success) {
-            $location.path('/campus');
+            $location.path('/dashboard');
         }, function(error) {
-            alert(error);
+            alert(error.error_description);
         });
     };
 }]);
