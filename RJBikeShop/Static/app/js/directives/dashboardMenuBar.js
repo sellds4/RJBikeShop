@@ -1,14 +1,17 @@
 'use strict';
 
 angular.module('RJBikeApp.directives')
-    .directive('dashboardControl', ['$location', function ($location) {
+    .directive('dashboardMenuBar', ['$rootScope', '$location', function ($rootScope, $location) {
         return {
             restrict: 'E',
             replace: true,
-            templateUrl:'./Static/app/partials/dashboard-control.html',
+            templateUrl:'./Static/app/partials/dashboard-menu-bar.html',
             link: function (scope, elem, attrs) {
                 scope.goToNewUser = function() {
                     $location.path('/newuser');
+                };
+                scope.showModal = function() {
+                    $rootScope.$broadcast('show-modal');
                 };
             }
         };

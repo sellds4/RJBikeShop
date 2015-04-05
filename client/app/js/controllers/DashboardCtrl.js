@@ -1,38 +1,31 @@
 'use strict';
 
-angular.module('RJBikeApp.controllers').controller('DashboardCtrl', ['$scope', '$location', 'BikeService',
-    function($scope, $location, Bike) {
+angular.module('RJBikeApp.controllers').controller('DashboardCtrl', ['$scope', '$rootScope', '$location', 'BikeService',
+    function($scope, $rootScope, $location, Bike) {
     
     angular.extend($scope, {
         bikes: [],
         view: {
-            list: true,
-            addBike: false
+            list: true
         },
-        newBike: {
-            make: null,
-            model: null,
-            type: null,
-            size: null,
-            year: null,
-            price: null,
-            color: null,
-            gender: null
-        },
+        newBike: {},
         modalShown: false
     });
 
     var addNewBike;
 
     function init() {
-        getAllBikes()
-    };
+        getAllBikes();
+        $scope.$on('show-modal', function() {
+            $scope.toggleModal();
+        });
+    }
 
     function getAllBikes() {
         Bike.getAllBikes().then(function(success) {
             $scope.bikes = success.reverse();
         });
-    };
+    }
 
     $scope.deleteBike = function(bikeID) {
         var confirmDelete = confirm("Are you sure you want to delete this bike?");
@@ -64,29 +57,20 @@ angular.module('RJBikeApp.controllers').controller('DashboardCtrl', ['$scope', '
 
     $scope.submitBike = function() {
         var s = $scope;
-        var bikeObj = {
-                Make: s.newBike.make,
-                Model: s.newBike.model,
-                FrameSize: s.newBike.size,
-                Year: s.newBike.year,
-                Price: s.newBike.price,
-                Cost: s.newBike.cost,
-                BikeType: s.newBike.type,
-                Color: s.newBike.color,
-                Gender: s.newBike.gender
-        };
+        var bikeObj = s.newBike;
         if(addNewBike) {
             Bike.addBike(bikeObj).then(function(data) {
                 getAllBikes();
                 alert("Bike Added!");
-                hideModal();
+                $rootScope.$broadcast('close-modal');
             });
         } else {
             var confirmDelete = confirm("Are the changes to this bike correct?");
             if(confirmDelete) {
-                Bike.editBike(editBike).then(function() {
+                Bike.editBike(bikeObj).then(function() {
                     getAllBikes();
                     alert("The bike is fixed!");
+                    $rootScope.$broadcast('close-modal');
                 });
             } else {
                 return;

@@ -16,9 +16,13 @@ angular.module('RJBikeApp.directives')
                     scope.dialogStyle.width = attrs.width;
                 if (attrs.height)
                     scope.dialogStyle.height = attrs.height;
+                $('.ng-modal-overlay').height($(document).height());
                 scope.hideModal = function() {
                     scope.show = false;
                 };
+                scope.$on('close-modal', function() {
+                    scope.hideModal();
+                });
             }
         };
     });
