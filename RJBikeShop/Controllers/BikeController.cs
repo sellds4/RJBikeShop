@@ -9,6 +9,7 @@ using RJBikeShop.Models;
 
 namespace RJBikeShop.Controllers
 {
+    [Authorize]
     public class BikeController : ApiController
     {
         private RJBikeContext db = new RJBikeContext();

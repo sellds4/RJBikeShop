@@ -5,7 +5,7 @@ angular.module('RJBikeApp.services').service('BikeService', ['$q', '$http', func
     // GETS
     this.getAllBikes = function() {
         var d = $q.defer();
-        $http.post('/api/Bike/Register', req).success(function(data) {
+        $http.get('/api/Bike').success(function(data) {
             d.resolve(data);
         }).error(function(error) {
             d.reject(error);

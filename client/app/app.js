@@ -38,7 +38,10 @@ RJBikeApp.config(function($routeProvider, $locationProvider) {
         })
         .when('/newuser', {
             templateUrl: './Static/app/partials/newuser.html',
-            controller: 'NewUserCtrl'
+            controller: 'NewUserCtrl',
+            resolve:{
+                loginResolve: loginResolve
+            }
         })
         .when('/dashboard', {
             templateUrl: './Static/app/partials/dashboard.html',

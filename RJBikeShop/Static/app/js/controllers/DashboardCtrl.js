@@ -70,4 +70,6 @@ angular.module('RJBikeApp.controllers').controller('DashboardCtrl', ['$scope', '
         }
     };
 
+    init();
+
 }]);
