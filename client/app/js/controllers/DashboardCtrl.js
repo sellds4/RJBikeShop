@@ -50,12 +50,12 @@ angular.module('RJBikeApp.controllers').controller('DashboardCtrl', ['$scope', '
         var s = $scope;
         s.modalShown = !s.modalShown;
         if(bikeObj) {
-            addNewBike = true;
+            addNewBike = false;
             for(var key in bikeObj) {
                 s.newBike[key] = bikeObj[key];
             }
         } else {
-            addNewBike = false;
+            addNewBike = true;
             for(var keys in s.newBike) {
                 s.newBike[keys] = null;
             }
