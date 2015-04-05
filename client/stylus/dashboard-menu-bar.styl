@@ -8,13 +8,25 @@
         width 50px
         margin-bottom 10px
         cursor pointer
-        img
-            padding-top 3px
-            display table-cell
-            margin 0 auto
-            width 45px
-        .bike-icon
-            padding-top 12px
+        .image-container
+            height 50px
+            img
+                padding-top 3px
+                display table-cell
+                margin 0 auto
+                width 45px
+        .control-text
+            display none
+            margin-top 5px
+            color $dark-blue
+        .image-container
+            .bike-icon
+                padding-top 12px
+        &:hover
+            margin-bottom 47px
+            .control-text
+                display block
+                text-align center
             
 +tablet-portrait-below()
     .dashboard-controls

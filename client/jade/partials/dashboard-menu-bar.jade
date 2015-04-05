@@ -1,9 +1,17 @@
 .dashboard-controls
     .control-container
-        img.bike-icon(src="/Static/app/img/bike.png")
+        .image-container
+            img.bike-icon(src="/Static/app/img/bike.png")
+        .control-text Does Something
     .control-container
-        img(src="/Static/app/img/double-arrow.png", ng-click="view.list = !view.list")
+        .image-container
+            img(src="/Static/app/img/double-arrow.png", ng-click="view.list = !view.list")
+        .control-text Toggle Views
     .control-container(ng-click="showModal()")
-        img(src="/Static/app/img/plus.png")
+        .image-container
+            img(src="/Static/app/img/plus.png")
+        .control-text Add Bikes
     .control-container(ng-click="goToNewUser()")
-        img(src="/Static/app/img/bikegear.png")
+        .image-container
+            img(src="/Static/app/img/bikegear.png")
+        .control-text Add Users
