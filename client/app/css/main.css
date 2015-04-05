@@ -1,29 +1,37 @@
 .login-container,
-.new-user-container {
+.new-user-container,
+.bike-info-container {
   width: 100%;
   margin-top: 50px;
 }
 .login-container .intro,
 .new-user-container .intro,
+.bike-info-container .intro,
 .login-container .motto,
-.new-user-container .motto {
+.new-user-container .motto,
+.bike-info-container .motto {
   text-align: center;
   margin-bottom: 10px;
 }
 .login-container .form-container,
 .new-user-container .form-container,
+.bike-info-container .form-container,
 .login-container .logo-container,
-.new-user-container .logo-container {
+.new-user-container .logo-container,
+.bike-info-container .logo-container {
   margin: 0 auto;
 }
 .login-container .intro,
-.new-user-container .intro {
+.new-user-container .intro,
+.bike-info-container .intro {
   font-size: 18px;
 }
 .login-container input,
 .new-user-container input,
+.bike-info-container input,
 .login-container .button-container,
-.new-user-container .button-container {
+.new-user-container .button-container,
+.bike-info-container .button-container {
   display: block;
   clear: both;
   float: none;
@@ -34,72 +42,142 @@
 }
 .login-container input:first-child,
 .new-user-container input:first-child,
+.bike-info-container input:first-child,
 .login-container .button-container:first-child,
-.new-user-container .button-container:first-child {
+.new-user-container .button-container:first-child,
+.bike-info-container .button-container:first-child {
   margin-left: auto;
 }
 .login-container input:last-child,
 .new-user-container input:last-child,
+.bike-info-container input:last-child,
 .login-container .button-container:last-child,
-.new-user-container .button-container:last-child {
+.new-user-container .button-container:last-child,
+.bike-info-container .button-container:last-child {
   margin-right: auto;
 }
 @media only screen and (max-width: 600px) {
   .login-container input,
   .new-user-container input,
+  .bike-info-container input,
   .login-container .button-container,
-  .new-user-container .button-container {
+  .new-user-container .button-container,
+  .bike-info-container .button-container {
     width: 80%;
   }
 }
 .login-container .form-container form,
-.new-user-container .form-container form {
+.new-user-container .form-container form,
+.bike-info-container .form-container form {
   margin: 0 auto;
 }
 .login-container .form-container input,
-.new-user-container .form-container input {
+.new-user-container .form-container input,
+.bike-info-container .form-container input {
   text-indent: 5px;
   margin-bottom: 10px;
 }
 .login-container .form-container .button-container,
-.new-user-container .form-container .button-container {
+.new-user-container .form-container .button-container,
+.bike-info-container .form-container .button-container {
   *zoom: 1;
 }
 .login-container .form-container .button-container:before,
 .new-user-container .form-container .button-container:before,
+.bike-info-container .form-container .button-container:before,
 .login-container .form-container .button-container:after,
-.new-user-container .form-container .button-container:after {
+.new-user-container .form-container .button-container:after,
+.bike-info-container .form-container .button-container:after {
   content: '';
   display: table;
 }
 .login-container .form-container .button-container:after,
-.new-user-container .form-container .button-container:after {
+.new-user-container .form-container .button-container:after,
+.bike-info-container .form-container .button-container:after {
   clear: both;
 }
 .login-container .form-container .button-container button,
-.new-user-container .form-container .button-container button {
+.new-user-container .form-container .button-container button,
+.bike-info-container .form-container .button-container button {
   float: right;
 }
 .login-container .logo-container img,
-.new-user-container .logo-container img {
+.new-user-container .logo-container img,
+.bike-info-container .logo-container img {
   display: block;
   margin: 20px auto 0px;
 }
 @media only screen and (max-width: 600px) {
   .login-container .logo-container img,
-  .new-user-container .logo-container img {
+  .new-user-container .logo-container img,
+  .bike-info-container .logo-container img {
     height: 40px;
     margin-bottom: 10px;
   }
 }
 .login-container .logo-container .motto,
-.new-user-container .logo-container .motto {
+.new-user-container .logo-container .motto,
+.bike-info-container .logo-container .motto {
   font-size: 30px;
 }
 .login-container .logo-container .motto span,
-.new-user-container .logo-container .motto span {
+.new-user-container .logo-container .motto span,
+.bike-info-container .logo-container .motto span {
   color: #005f9e;
   font-style: italic;
+}
+.bike-info-container {
+  margin-top: 20px;
+}
+.bike-info-container .intro {
+  margin-bottom: 15px;
+}
+.bike-info-container .input-label {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 9.875%;
+  margin-left: 12.875%;
+  margin-right: 3%;
+  color: #005f9e;
+  margin-left: 10px;
+  padding-left: 30px;
+}
+.bike-info-container .input-label:before,
+.bike-info-container .input-label:after {
+  content: '';
+  display: table;
+}
+.bike-info-container .input-label:after {
+  clear: both;
+}
+.bike-info-container .input-label:last-child {
+  margin-right: 0%;
+}
+.bike-info-container input {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 74.25%;
+  margin-left: 0%;
+  margin-right: 3%;
+}
+.bike-info-container input:before,
+.bike-info-container input:after {
+  content: '';
+  display: table;
+}
+.bike-info-container input:after {
+  clear: both;
+}
+.bike-info-container input:last-child {
+  margin-right: 0%;
+}
+.bike-info-container .button-container {
+  float: right;
+  margin-right: 6%;
 }
 table {
   width: 100%;
@@ -417,6 +495,45 @@ table {
   .nav-bar .icon-container:last-child {
     margin-right: 0%;
   }
+}
+.ng-modal-overlay {
+  position: absolute;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.8;
+}
+.ng-modal-dialog {
+  z-index: 10000;
+  position: absolute;
+  width: 50%;
+/* Center the dialog */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  background-color: #fff;
+  box-shadow: 4px 4px 80px #000;
+}
+.ng-modal-dialog-content {
+  padding: 10px;
+  text-align: left;
+}
+.ng-modal-close {
+  position: absolute;
+  top: 3px;
+  right: 5px;
+  padding: 5px;
+  cursor: pointer;
+  font-size: 120%;
+  display: inline-block;
+  font-weight: bold;
+  font-family: 'arial', 'sans-serif';
+  height: 20px;
 }
 body {
   margin: 0;

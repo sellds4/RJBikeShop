@@ -3,11 +3,11 @@
         .intro Please enter the new user's information below.
         .form-container
             form(name="newUserForm", ng-submit="submit()")
-                input(type="text", placeholder="first name", name="firstname", ng-model="firstname", ng-min="1", ng-max="50", ng-required="true")
-                input(type="text", placeholder="last name", name="lastname", ng-model="lastname", ng-min="1", ng-max="50", ng-required="true")
-                input(type="email", placeholder="enter an email", name="email", ng-model="email", ng-required="true")
-                input(type="password", placeholder="enter a password", name="password", ng-model="password", ng-min="6", ng-required="true")
-                input(type="password", placeholder="confirm your password", name="confirmpassword", ng-model="confirmpassword", ng-min="6", ng-required="true")
+                input(type="text", placeholder="first name", name="firstname", ng-model="firstname", ng-min="1", ng-max="50", ng-required="true", autocomplete="off")
+                input(type="text", placeholder="last name", name="lastname", ng-model="lastname", ng-min="1", ng-max="50", ng-required="true", autocomplete="off")
+                input(type="email", placeholder="enter an email", name="email", ng-model="email", ng-required="true", autocomplete="off")
+                input(type="password", placeholder="enter a password", name="password", ng-model="password", ng-min="6", ng-required="true", autocomplete="off")
+                input(type="password", placeholder="confirm your password", name="confirmpassword", ng-model="confirmpassword", ng-min="6", ng-required="true", autocomplete="off")
                 .button-container
                     button(type="submit", ng-disabled="newUserForm.$invalid") Add Account
         .logo-container

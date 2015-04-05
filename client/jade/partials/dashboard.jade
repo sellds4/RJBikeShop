@@ -4,7 +4,7 @@ dashboard-header
     .bikes-container
         .search-container
             img(src="/Static/app/img/search-icon.png")
-            input
+            input(ng-model="bikeSearchText")
         .add-bikes(ng-show="view.addBike")
             form(ng-submit="addBiketoDB()")
                 input(ng-model="newBike.make")
@@ -29,7 +29,7 @@ dashboard-header
                     th Gender
                     th.edit-col Edit?
                     th.delete-col Delete?
-                tr(ng-repeat="bike in bikes")
+                tr(ng-repeat="bike in bikes | filter: bikeSearchText")
                     td {{bike.MakeString}}
                     td {{bike.Model}}
                     td {{bike.BikeTypeString}}
@@ -39,7 +39,7 @@ dashboard-header
                     td {{bike.ColorString}}
                     td {{bike.GenderString}}
                     td
-                        img.edit-icon(ng-click="editBike(bike)", src="/Static/app/img/edit-icon.png")
+                        img.edit-icon(ng-click="toggleModal(bike)", src="/Static/app/img/edit-icon.png")
                     td
                         img.red-x(ng-click="deleteBike(bike.Id)", src="/Static/app/img/red-x.png")
         .bikes-cards(ng-show="!view.list")
@@ -70,3 +70,35 @@ dashboard-header
                             td {{bike.ColorStringString}}
                             th Gender:
                             td {{bike.GenderString}}
+    modal-dialog(show="modalShown", width="80%", height="60%")
+        .bike-info-container
+            .intro Please enter the bike information below
+            .form-container
+                form(name="newBikeForm", ng-submit="submitBike()")
+                    .input-container
+                        .input-label Make
+                        input(type="text", ng-model="newBike.make", ng-required="true", autocomplete="off")
+                    .input-container
+                        .input-label Model
+                        input(type="text", ng-model="newBike.model", ng-required="true", autocomplete="off")
+                    .input-container
+                        .input-label Type
+                        input(type="text", ng-model="newBike.type", ng-required="true", autocomplete="off")
+                    .input-container
+                        .input-label Size
+                        input(type="text", ng-model="newBike.size", ng-required="true", autocomplete="off")
+                    .input-container
+                        .input-label Year
+                        input(type="text", ng-model="newBike.year", ng-required="true", autocomplete="off")
+                    .input-container
+                        .input-label Price
+                        input(type="text", ng-model="newBike.price", ng-required="true", autocomplete="off")
+                    .input-container
+                        .input-label Color
+                        input(type="text", ng-model="newBike.color", ng-required="true", autocomplete="off")
+                    .input-container
+                        .input-label Gender
+                        input(type="text", ng-model="newBike.gender", ng-required="true", autocomplete="off")
+                    .button-container
+                        button(type="submit", ng-disabled="newBikeForm.$invalid") Submit
+
