@@ -1,8 +1,8 @@
 .dashboard-controls
-    .control-container
+    .control-container(ng-click="toggleSold()")
         .image-container
             img.bike-icon(src="/Static/app/img/bike.png")
-        .control-text Does Something
+        .control-text View Sold/Unsold
     .control-container
         .image-container
             img(src="/Static/app/img/double-arrow.png", ng-click="view.list = !view.list")

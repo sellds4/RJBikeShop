@@ -6,7 +6,8 @@ angular.module('RJBikeApp.controllers').controller('DashboardCtrl', ['$scope', '
     angular.extend($scope, {
         bikes: [],
         view: {
-            list: true
+            list: true,
+            showSold: false
         },
         newBike: {},
         modalShown: false,
@@ -38,10 +39,12 @@ angular.module('RJBikeApp.controllers').controller('DashboardCtrl', ['$scope', '
             Bike.deleteBike(bikeID).then(function() {
                 getAllBikes();
                 alert("The selected bike has been deleted.");
+                $scope.doingRequest = false;
             });
+        } else {
+            $scope.doingRequest = false;
+            return;
         }
-        $scope.doingRequest = false;
-        return;
     };
 
     $scope.toggleModal = function(bikeObj) {
@@ -82,18 +85,22 @@ angular.module('RJBikeApp.controllers').controller('DashboardCtrl', ['$scope', '
                 getAllBikes();
                 alert("Bike Added!");
                 $rootScope.$broadcast('close-modal');
+                s.doingRequest = false;
             });
         } else {
+            bikeObj.Id = s.newBike.Id;
             var confirmDelete = confirm("Are the changes to this bike correct?");
             if(confirmDelete) {
                 Bike.editBike(bikeObj).then(function() {
                     getAllBikes();
                     alert("The bike is fixed!");
                     $rootScope.$broadcast('close-modal');
+                    s.doingRequest = false;
                 });
+            } else {
+                $scope.doingRequest = false;
+                return;
             }
-            s.doingRequest = false;
-            return;
         }
     }
 

@@ -619,7 +619,7 @@ button {
   cursor: pointer;
 }
 .grey-button {
-  background-color: #808080;
+  background-color: #808080 !important;
 }
 .page-content {
   *zoom: 1;
