@@ -49,6 +49,18 @@ namespace RJBikeShop.Controllers
                 return BadRequest();
             }
 
+            /*Bike currentBike = db.Bikes.Find(id);
+
+            if(!currentBike.Sold && bike.Sold)
+            {
+                bike.DateSold = DateTime.Now;
+            }
+            
+            if(currentBike.Sold && !bike.Sold)
+            {
+                bike.DateSold = null;
+            }*/
+
             db.Entry(bike).State = EntityState.Modified;
 
             try

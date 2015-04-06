@@ -89,5 +89,8 @@ dashboard-header
                         .input-label Gender:
                         input(type="text", name="new-bike-gender", ng-model="newBike.GenderString", ng-required="true", autocomplete="off")
                     .button-container
+                        .checkbox-container
+                            .input-label Bike Sold 
+                            input(type="checkbox", name="new-bike-sold", ng-model="newBike.Sold")
                         button(type="submit", ng-disabled="newBikeForm.$invalid") Submit
 

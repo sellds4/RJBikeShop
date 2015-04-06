@@ -58,6 +58,10 @@ angular.module('RJBikeApp.controllers').controller('DashboardCtrl', ['$scope', '
     $scope.submitBike = function() {
         var s = $scope;
         var bikeObj = s.newBike;
+        bikeObj.Make = bikeObj.MakeString;
+        bikeObj.BikeType = bikeObj.BikeTypeString;
+        bikeObj.Color = bikeObj.ColorString;
+        bikeObj.Gender = bikeObj.GenderString;
         if(addNewBike) {
             Bike.addBike(bikeObj).then(function(data) {
                 getAllBikes();

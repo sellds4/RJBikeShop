@@ -161,6 +161,24 @@
   width: 90%;
   margin-top: 17px;
 }
+.bike-info-container .button-container .checkbox-container {
+  float: left;
+}
+.bike-info-container .button-container .checkbox-container .input-label,
+.bike-info-container .button-container .checkbox-container input {
+  display: inline-block;
+  width: auto;
+}
+.bike-info-container .button-container .checkbox-container .input-label {
+  margin-right: 12px;
+  vertical-align: super;
+}
+.bike-info-container .button-container .checkbox-container input {
+  -ms-transform: scale(2);
+  -moz-transform: scale(2);
+  -webkit-transform: scale(2);
+  -o-transform: scale(2);
+}
 .bike-info-container .button-container button {
   float: right;
 }
@@ -387,6 +405,7 @@ table {
 }
 .dashboard-header .royal-jay-container .royal-jay-logo {
   height: 40px;
+  cursor: pointer;
 }
 .dashboard-header .logout {
   font-weight: bold;

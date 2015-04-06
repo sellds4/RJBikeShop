@@ -12,6 +12,9 @@ angular.module('RJBikeApp.directives')
                         $location.path('/');
                     });
                 };
+                scope.goHome = function() {
+                    $location.path('/');
+                };
             }
         };
     }]);
