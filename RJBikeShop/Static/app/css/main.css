@@ -89,14 +89,19 @@
 .login-container .form-container select,
 .new-user-container .form-container select,
 .bike-info-container .form-container select {
-  text-indent: 5px;
   margin-bottom: 10px;
+}
+.login-container .form-container input,
+.new-user-container .form-container input,
+.bike-info-container .form-container input {
+  text-indent: 5px;
 }
 .login-container .form-container select,
 .new-user-container .form-container select,
 .bike-info-container .form-container select {
   width: 100%;
   height: 25px;
+  text-indent: 1px;
 }
 .login-container .form-container .button-container,
 .new-user-container .form-container .button-container,
@@ -612,6 +617,9 @@ button {
   border-radius: 5px;
   padding: 7px 20px;
   cursor: pointer;
+}
+.grey-button {
+  background-color: #808080;
 }
 .page-content {
   *zoom: 1;

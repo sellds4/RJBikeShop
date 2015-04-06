@@ -3,6 +3,10 @@
 angular.module('RJBikeApp.controllers').controller('NewUserCtrl', ['$scope', '$location', 'AccountService',
     function($scope, $location, Account) {
 
+    angular.extend($scope, {
+        doingRequest: false
+    });
+
     $scope.submit = function() {
         var s = $scope,
             req = {
@@ -12,10 +16,12 @@ angular.module('RJBikeApp.controllers').controller('NewUserCtrl', ['$scope', '$l
             Password: s.password,
             ConfirmPassword: s.confirmpassword
         };
+        s.doingRequest = true;
         Account.register(req).then(function(success) {
             $location.path('/dashboard');
         }, function(error) {
             alert(error);
         });
+        s.doingRequest = false;
     };
 }]);
