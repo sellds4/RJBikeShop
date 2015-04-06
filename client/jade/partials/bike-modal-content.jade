@@ -1,0 +1,38 @@
+.bike-info-container
+    .intro Please enter the bike information below
+    .form-container
+        form(name="newBikeForm", ng-submit="submitBike()")
+            .input-container
+                .input-label Make:
+                select(name="new-bike-make", ng-model="newBike.MakeString", ng-required="true")
+                    option(ng-repeat="make in bikeDataValues.makes | orderBy: make", value="{{make}}") {{make}}
+            .input-container
+                .input-label Model:
+                input(type="text", name="new-bike-model", ng-model="newBike.Model", ng-required="true", autocomplete="off")
+            .input-container
+                .input-label Type:
+                select(name="new-bike-type", ng-model="newBike.BikeTypeString", ng-required="true")
+                    option(ng-repeat="type in bikeDataValues.types | orderBy: type", value="{{type}}") {{type}}
+            .input-container
+                .input-label Size:
+                input(type="text", name="new-bike-size", ng-model="newBike.FrameSize", ng-required="true", autocomplete="off")
+            .input-container
+                .input-label Year:
+                input(type="text", name="new-bike-year", ng-model="newBike.Year", ng-required="true", autocomplete="off")
+            .input-container
+                .input-label Price:
+                input(type="number", name="new-bike-price", ng-model="newBike.Price", ng-required="true", autocomplete="off")
+            .input-container
+                .input-label Color:
+                select(name="new-bike-color", ng-model="newBike.ColorString", ng-required="true")
+                    option(ng-repeat="color in bikeDataValues.colors | orderBy: color", value="{{color}}") {{color}}
+            .input-container
+                .input-label Gender:
+                select(name="new-bike-gender", ng-model="newBike.GenderString", ng-required="true")
+                    option(ng-repeat="gender in bikeDataValues.genders | orderBy: gender", value="{{gender}}") {{gender}}
+            .button-container
+                .checkbox-container
+                    .input-label Bike Sold 
+                    input(type="checkbox", name="new-bike-sold", ng-model="newBike.Sold")
+                button(type="submit", ng-disabled="newBikeForm.$invalid || doingRequest", ng-class="{'grey-button': doingRequest}") Submit
+

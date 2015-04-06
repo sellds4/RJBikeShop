@@ -19,6 +19,9 @@ angular.module('RJBikeApp.controllers').controller('DashboardCtrl', ['$scope', '
         $scope.$on('show-modal', function() {
             $scope.toggleModal();
         });
+        Bike.getBikeDataValues().then(function(success) {
+            $scope.bikeDataValues = success;
+        });
     }
 
     function getAllBikes() {
@@ -57,12 +60,21 @@ angular.module('RJBikeApp.controllers').controller('DashboardCtrl', ['$scope', '
 
     $scope.submitBike = function() {
         var s = $scope;
-        var bikeObj = s.newBike;
+        var bikeObj = {};
+        for(var key in s.newBike) {
+            if(key === 'Id') {
+                continue;
+            } else {
+                bikeObj[key] = s.newBike[key];
+            }
+        }
         bikeObj.Make = bikeObj.MakeString;
         bikeObj.BikeType = bikeObj.BikeTypeString;
         bikeObj.Color = bikeObj.ColorString;
         bikeObj.Gender = bikeObj.GenderString;
         if(addNewBike) {
+            bikeObj.Cost = bikeObj.Price * .8;
+            bikeObj.Sold = bikeObj.Sold ? bikeObj.Sold : false;
             Bike.addBike(bikeObj).then(function(data) {
                 getAllBikes();
                 alert("Bike Added!");

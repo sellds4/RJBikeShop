@@ -60,37 +60,4 @@ dashboard-header
                             th Gender:
                             td {{bike.GenderString}}
     modal-dialog(show="modalShown", height="550px")
-        .bike-info-container
-            .intro Please enter the bike information below
-            .form-container
-                form(name="newBikeForm", ng-submit="submitBike()")
-                    .input-container
-                        .input-label Make:
-                        input(type="text", name="new-bike-make", ng-model="newBike.MakeString", ng-required="true", autocomplete="off")
-                    .input-container
-                        .input-label Model:
-                        input(type="text", name="new-bike-model", ng-model="newBike.Model", ng-required="true", autocomplete="off")
-                    .input-container
-                        .input-label Type:
-                        input(type="text", name="new-bike-type", ng-model="newBike.BikeTypeString", ng-required="true", autocomplete="off")
-                    .input-container
-                        .input-label Size:
-                        input(type="text", name="new-bike-size", ng-model="newBike.FrameSize", ng-required="true", autocomplete="off")
-                    .input-container
-                        .input-label Year:
-                        input(type="text", name="new-bike-year", ng-model="newBike.Year", ng-required="true", autocomplete="off")
-                    .input-container
-                        .input-label Price:
-                        input(type="number", name="new-bike-price", ng-model="newBike.Price", ng-required="true", autocomplete="off")
-                    .input-container
-                        .input-label Color:
-                        input(type="text", name="new-bike-color", ng-model="newBike.ColorString", ng-required="true", autocomplete="off")
-                    .input-container
-                        .input-label Gender:
-                        input(type="text", name="new-bike-gender", ng-model="newBike.GenderString", ng-required="true", autocomplete="off")
-                    .button-container
-                        .checkbox-container
-                            .input-label Bike Sold 
-                            input(type="checkbox", name="new-bike-sold", ng-model="newBike.Sold")
-                        button(type="submit", ng-disabled="newBikeForm.$invalid") Submit
-
+        .bike-modal-content(ng-include="'Static/app/partials/bike-modal-content.html'")

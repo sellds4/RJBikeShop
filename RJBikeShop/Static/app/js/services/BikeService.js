@@ -2,24 +2,7 @@
 
 angular.module('RJBikeApp.services').service('BikeService', ['$q', '$http', function($q, $http) {
     
-    this.bikeData = {
-        makes: getBikeDataValues('Make'),
-        types: getBikeDataValues('BikeType'),
-        colors: getBikeDataValues('Color'),
-        genders: getBikeDataValues('Gender')
-    };
-
     // GETS
-    function getBikeDataValues(dataType) {
-        var d = $q.defer();
-        $http.get('/api/Bike/bikedata').success(function(data) {
-            d.resolve(data);
-        }).error(function(error) {
-            d.reject(error);
-        });
-        return d.promise;
-    }
-    
     this.getAllBikes = function() {
         var d = $q.defer();
         $http.get('/api/Bike').success(function(data) {
@@ -30,6 +13,15 @@ angular.module('RJBikeApp.services').service('BikeService', ['$q', '$http', func
         return d.promise;
     };
 
+    this.getBikeDataValues = function() {
+        var d = $q.defer();
+        $http.get('/api/Bike/BikeData').success(function(data) {
+            d.resolve(data);
+        }).error(function(error) {
+            d.reject(error);
+        });
+        return d.promise;
+    };
 
     // POSTS
     this.addBike = function(bike) {

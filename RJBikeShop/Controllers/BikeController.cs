@@ -12,6 +12,7 @@ using System;
 namespace RJBikeShop.Controllers
 {
     [Authorize]
+    [RoutePrefix("api/Bike")]
     public class BikeController : ApiController
     {
         private RJBikeContext db = new RJBikeContext();
@@ -33,6 +34,26 @@ namespace RJBikeShop.Controllers
             }
 
             return Ok(bike);
+        }
+
+        // GET: api/Bike/BikeData
+        [ResponseType(typeof(Dictionary<string, int[]>))]
+        [Route("BikeData")]
+        public IHttpActionResult GetBikeData()
+        {
+            string[] makes = Enum.GetNames(typeof(Make));
+            string[] types = Enum.GetNames(typeof(BikeType));
+            string[] colors = Enum.GetNames(typeof(Color));
+            string[] genders = Enum.GetNames(typeof(Gender));
+            
+            var bikeDataDict = new Dictionary<string, string[]>();
+
+            bikeDataDict["makes"] = makes;
+            bikeDataDict["types"] = types;
+            bikeDataDict["colors"] = colors;
+            bikeDataDict["genders"] = genders;
+
+            return Ok(bikeDataDict);
         }
 
         // PUT: api/Bike/5

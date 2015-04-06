@@ -6,7 +6,7 @@
                 input(type="text", placeholder="username", name="username", ng-model="username", ng-required="true", autocomplete="off")
                 input(type="password", placeholder="password", name="password", ng-model="password", ng-min="6", ng-required="true", autocomplete="off")
                 .button-container
-                    button(type="submit", ng-disabled="loginForm.$invalid") Login
+                    button(type="submit", ng-disabled="loginForm.$invalid || doingRequest", ng-class="{'grey-button': doingRequest}") Login
         .logo-container
             img.royal-jay-logo(src="/Static/app/img/royal-jay-logo.png")
             .motto The <span>"Royalest"</span> of All Bike Shops
