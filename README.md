@@ -20,3 +20,11 @@ INITIAL LOGIN
 username: admin
 
 password: password123
+
+.Net Web.Config Connection String will need to be changed to the following to run a LocalDB version
+
+```html
+<connectionStrings>
+    <add name="RJBikeContext" connectionString="Data Source=(LocalDB)\v11.0;AttachDbFileName=|DataDirectory|\DatabaseFileName.mdf;Integrated Security=True;MultipleActiveResultSets=True" providerName="System.Data.SqlClient"/>
+</connectionStrings>
+```
