@@ -1,6 +1,6 @@
 EITHER
 
-Use the built .Net file located in the RJBikeShop folder
+Use the .Net Project file (RJBikeShop)
 
 OR
 
