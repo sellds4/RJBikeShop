@@ -2,11 +2,15 @@
     .control-container(ng-click="toggleSold()")
         .image-container
             img.bike-icon(src="/Static/app/img/bike.png")
-        .control-text View Sold/Unsold
-    .control-container
+        .control-text View 
+            span(ng-show="view.showSold") Unsold
+            span(ng-show="!view.showSold") Sold
+    .control-container(ng-click="view.list = !view.list")
         .image-container
-            img(src="/Static/app/img/double-arrow.png", ng-click="view.list = !view.list")
-        .control-text Toggle Views
+            img(src="/Static/app/img/double-arrow.png")
+        .control-text View 
+            span(ng-show="view.list") Cards
+            span(ng-show="!view.list") List
     .control-container(ng-click="showModal()")
         .image-container
             img(src="/Static/app/img/plus.png")
