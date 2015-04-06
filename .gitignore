@@ -9,10 +9,7 @@
 
 # HTML
 *.html
-!GradCap/*.html
-
-# .Net Static JS
-GradCap/Static
+!RJBikeShop/*.html
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
