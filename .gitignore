@@ -8,8 +8,8 @@
 *.sln.docstates
 
 # HTML
-*.html
-!RJBikeShop/*.html
+client/app/partials
+client/app/*.html
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs

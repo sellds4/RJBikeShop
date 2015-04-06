@@ -1,0 +1,19 @@
+
+<div class="dashboard-controls">
+  <div ng-click="toggleSold()" class="control-container">
+    <div class="image-container"><img src="/Static/app/img/bike.png" class="bike-icon"/></div>
+    <div class="control-text">View <span ng-show="view.showSold">Unsold</span><span ng-show="!view.showSold">Sold</span></div>
+  </div>
+  <div ng-click="view.list = !view.list" class="control-container">
+    <div class="image-container"><img src="/Static/app/img/double-arrow.png"/></div>
+    <div class="control-text">View <span ng-show="view.list">Cards</span><span ng-show="!view.list">List</span></div>
+  </div>
+  <div ng-click="showModal()" class="control-container">
+    <div class="image-container"><img src="/Static/app/img/plus.png"/></div>
+    <div class="control-text">Add Bikes</div>
+  </div>
+  <div ng-click="goToNewUser()" class="control-container">
+    <div class="image-container"><img src="/Static/app/img/bikegear.png"/></div>
+    <div class="control-text">Add Users</div>
+  </div>
+</div>
