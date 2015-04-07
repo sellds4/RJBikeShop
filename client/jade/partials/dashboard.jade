@@ -18,7 +18,7 @@ dashboard-header
                     th Gender
                     th.edit-col Edit?
                     th.delete-col Delete?
-                tr(ng-repeat="bike in bikes | filter: bikeSearchText", ng-show="bike.Sold === view.showSold")
+                tr(ng-repeat="bike in bikeData.BikeList | filter: bikeSearchText", ng-show="bike.Sold === view.showSold")
                     td {{bike.MakeString}}
                     td {{bike.Model}}
                     td {{bike.BikeTypeString}}

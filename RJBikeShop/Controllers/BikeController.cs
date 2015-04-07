@@ -23,11 +23,11 @@ namespace RJBikeShop.Controllers
             public int PageSize { get; set; }
             public int PageCount { get; private set; }
             public int TotalBikeCount { get; set; }
-            public List<T> Items { get; set; }
+            public List<T> BikeList { get; set; }
 
-            public PagedResult(IEnumerable<T> items, int pageNo, int pageSize, int totalBikeCount)
+            public PagedResult(IEnumerable<T> bikeList, int pageNo, int pageSize, int totalBikeCount)
             {
-                Items = new List<T>(items);
+                BikeList = new List<T>(bikeList);
                 PageNum = pageNo;
                 PageSize = pageSize;
                 TotalBikeCount = totalBikeCount;
