@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/sellds4/RJBikeShop",
   "devDependencies": {
+    "bootstrap-styl": "^4.0.3",
     "gulp": "^3.8.11",
     "gulp-clean": "^0.3.1",
     "gulp-jade": "^1.0.0",
