@@ -25,13 +25,14 @@ namespace RJBikeShop.Controllers
             public int TotalBikeCount { get; set; }
             public List<T> BikeList { get; set; }
 
-            public PagedResult(IEnumerable<T> bikeList, int pageNo, int pageSize, int totalBikeCount)
+            public PagedResult(IEnumerable<T> bikeList, int pageNum, int pageSize, int totalBikeCount)
             {
-                BikeList = new List<T>(bikeList);
-                PageNum = pageNo;
+                
+                PageNum = pageNum;
                 PageSize = pageSize;
-                TotalBikeCount = totalBikeCount;
                 PageCount = totalBikeCount > 0 ? (int)Math.Ceiling(totalBikeCount / (double)PageSize) : 0;
+                TotalBikeCount = totalBikeCount;
+                BikeList = new List<T>(bikeList);
             }
         }
 

@@ -7,7 +7,7 @@ angular.module('RJBikeApp.controllers').controller('DashboardCtrl', ['$scope', '
         bikeData: null,
         currentPageNum: 1,
         pageSize: 24,
-        totalPages,
+        totalPages: null,
         view: {
             list: true,
             showSold: false
@@ -36,6 +36,7 @@ angular.module('RJBikeApp.controllers').controller('DashboardCtrl', ['$scope', '
         var bikePageReq = { pageNum: pageNum, pageSize: pageSize };
         Bike.getPagedBikes(bikePageReq).then(function(success) {
             s.bikeData = success;
+            s.totalPages = success.PageCount;
         });
     };
 
