@@ -17,10 +17,44 @@ namespace RJBikeShop.Controllers
     {
         private RJBikeContext db = new RJBikeContext();
 
+        public class PagedResult<T>
+        {
+            public int PageNum { get; set; }
+            public int PageSize { get; set; }
+            public int PageCount { get; private set; }
+            public int TotalBikeCount { get; set; }
+            public List<T> Items { get; set; }
+
+            public PagedResult(IEnumerable<T> items, int pageNo, int pageSize, int totalBikeCount)
+            {
+                Items = new List<T>(items);
+                PageNum = pageNo;
+                PageSize = pageSize;
+                TotalBikeCount = totalBikeCount;
+                PageCount = totalBikeCount > 0 ? (int)Math.Ceiling(totalBikeCount / (double)PageSize) : 0;
+            }
+        }
+
         // GET: api/Bike
         public IQueryable<Bike> GetBikes()
         {
             return db.Bikes;
+        }
+
+        // GET: api/Bike with data
+        [ResponseType(typeof(PagedResult<Bike>))]
+        public IHttpActionResult GetBikes(int pageNum, int pageSize)
+        {
+            int skip = (pageNum - 1) * pageSize;
+            int totalBikeCount = db.Bikes.Count();
+
+            var bikes = db.Bikes
+                .OrderByDescending(x => x.Id)
+                .Skip(skip)
+                .Take(pageSize)
+                .ToList();
+
+            return Ok(new PagedResult<Bike>(bikes, pageNum, pageSize, totalBikeCount));
         }
 
         // GET: api/Bike/5
