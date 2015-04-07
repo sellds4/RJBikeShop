@@ -5,6 +5,7 @@ dashboard-header
         .search-container
             img(src="/Static/app/img/search-icon.png")
             input(ng-model="bikeSearchText")
+        page-bar
         .bikes-list(ng-show="view.list")
             table
                 tr
@@ -32,7 +33,7 @@ dashboard-header
                     td
                         img.red-x(ng-click="deleteBike(bike.Id)", src="/Static/app/img/red-x.png")
         .bikes-cards(ng-show="!view.list")
-            .card-container(ng-repeat="bike in bikes | filter: bikeSearchText", ng-show="bike.Sold === view.showSold")
+            .card-container(ng-repeat="bike in bikeData.BikeList | filter: bikeSearchText", ng-show="bike.Sold === view.showSold")
                 .corner-icons
                     img.red-x-small(ng-click="deleteBike(bike.Id)", src="/Static/app/img/red-x.png")
                     img.edit-icon-small(ng-click="toggleModal(bike)", src="/Static/app/img/edit-icon.png")

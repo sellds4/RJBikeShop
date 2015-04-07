@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('RJBikeApp.directives')
-    .directive('dashboardHeader', ['$location', 'LoginService', function ($location, Login) {
+    .directive('pageBar', ['$location', function ($location) {
         return {
             restrict: 'E',
             replace: true,

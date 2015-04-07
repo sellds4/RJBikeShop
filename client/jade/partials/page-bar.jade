@@ -1,0 +1,18 @@
+nav
+    ul class="pagination"
+        li(ng-click="getPagedBikes(currentPageNum - 1, pageSize)", ng-class="{'disabled': currentPageNum === 1}")
+            a(href="#" aria-label="Previous")
+                span(aria-hidden="true") &laquo;
+        li(ng-click="getPagedBikes(currentPageNum, pageSize)", class="disabled", ng-class="{'active': currentPageNum <= totalPages - 4}")
+            (a href="#") {{ currentPageNum }}
+        li(ng-click="getPagedBikes(currentPageNum + 1, pageSize)", class="disabled", ng-class="{'active': currentPageNum === totalPages - 3}")
+            (a href="#") {{ currentPageNum + 1 }}
+        li(ng-click="getPagedBikes(currentPageNum + 2, pageSize)", class="disabled", ng-class="{'active': currentPageNum === totalPages - 2}")
+            (a href="#") {{ currentPageNum + 2 }}
+        li(ng-click="getPagedBikes(currentPageNum + 3, pageSize)", class="disabled", ng-class="{'active': currentPageNum === totalPages - 1}")
+            (a href="#") {{ currentPageNum + 3 }}
+        li(ng-click="getPagedBikes(currentPageNum + 4, pageSize)", class="disabled", , ng-class="{'active': currentPageNum === totalPages}")
+            (a href="#") {{ currentPageNum + 4 }}
+        li(ng-click="getPagedBikes(currentPageNum + 5, pageSize)", ng-class="'disabled': currentPageNum > totalPages - 5")
+            a(href="#" aria-label="Next")
+                span(aria-hidden="true") &raquo
