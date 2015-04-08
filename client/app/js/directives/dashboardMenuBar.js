@@ -15,6 +15,7 @@ angular.module('RJBikeApp.directives')
                 };
                 scope.toggleSold = function() {
                     scope.view.showSold = !scope.view.showSold;
+                    $scope.getPagedBikes(1, $scope.pageSize, $scope.view.showSold);
                 };
             }
         };

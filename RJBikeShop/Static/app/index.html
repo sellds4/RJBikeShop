@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="RJBikeApp">
+  <head>
+    <meta charset="utf8">
+    <base href="/">
+    <title>RJ Bike Shop</title>
+    <script type="text/javascript" src="Static/app/js/lib/angular.js"></script>
+    <script type="text/javascript" src="Static/app/js/lib/angular-route.js"></script>
+    <script type="text/javascript" src="Static/app/js/lib/angular-cookies.js"></script>
+    <script type="text/javascript" src="Static/app/js/lib/angular-local-storage.js"></script>
+    <script type="text/javascript" src="Static/app/js/lib/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="Static/app/app.js"></script>
+    <script type="text/javascript" src="Static/app/js/controllers/LoginCtrl.js"></script>
+    <script type="text/javascript" src="Static/app/js/controllers/NewUserCtrl.js"></script>
+    <script type="text/javascript" src="Static/app/js/controllers/DashboardCtrl.js"></script>
+    <script type="text/javascript" src="Static/app/js/services/AccountService.js"></script>
+    <script type="text/javascript" src="Static/app/js/services/AuthInterceptorService.js"></script>
+    <script type="text/javascript" src="Static/app/js/services/LoginService.js"></script>
+    <script type="text/javascript" src="Static/app/js/services/BikeService.js"></script>
+    <script type="text/javascript" src="Static/app/js/directives/dashboardHeader.js"></script>
+    <script type="text/javascript" src="Static/app/js/directives/dashboardMenuBar.js"></script>
+    <script type="text/javascript" src="Static/app/js/directives/modalDialog.js"></script>
+    <script type="text/javascript" src="Static/app/js/directives/pageBar.js"></script>
+    <link rel="stylesheet" type="text/css" href="Static/app/css/main.css">
+  </head>
+  <body>
+    <div ng-view></div>
+  </body>
+</html>

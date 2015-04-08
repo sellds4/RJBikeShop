@@ -6,6 +6,7 @@
     <div class="search-container"><img src="/Static/app/img/search-icon.png"/>
       <input ng-model="bikeSearchText"/>
     </div>
+    <page-bar></page-bar>
     <div ng-show="view.list" class="bikes-list">
       <table>
         <tr>
@@ -20,7 +21,7 @@
           <th class="edit-col">Edit?</th>
           <th class="delete-col">Delete?</th>
         </tr>
-        <tr ng-repeat="bike in bikes | filter: bikeSearchText" ng-show="bike.Sold === view.showSold">
+        <tr ng-repeat="bike in bikeData.BikeList | filter: bikeSearchText">
           <td>{{bike.MakeString}}</td>
           <td>{{bike.Model}}</td>
           <td>{{bike.BikeTypeString}}</td>
@@ -35,7 +36,7 @@
       </table>
     </div>
     <div ng-show="!view.list" class="bikes-cards">
-      <div ng-repeat="bike in bikes | filter: bikeSearchText" ng-show="bike.Sold === view.showSold" class="card-container">
+      <div ng-repeat="bike in bikeData.BikeList | filter: bikeSearchText" class="card-container">
         <div class="corner-icons"><img ng-click="deleteBike(bike.Id)" src="/Static/app/img/red-x.png" class="red-x-small"/><img ng-click="toggleModal(bike)" src="/Static/app/img/edit-icon.png" class="edit-icon-small"/></div>
         <div style="height:150px" class="bike-pic"></div>
         <div class="description-container">

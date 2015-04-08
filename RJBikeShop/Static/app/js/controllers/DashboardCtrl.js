@@ -4,11 +4,14 @@ angular.module('RJBikeApp.controllers').controller('DashboardCtrl', ['$scope', '
     function($scope, $rootScope, $location, Bike) {
     
     angular.extend($scope, {
-        bikes: [],
+        bikeData: null,
+        currentPageNum: 1,
+        pageSize: 24,
+        totalPages: null,
         view: {
-            list: true,
-            showSold: false
+            list: true
         },
+        showSold: false,
         newBike: {},
         modalShown: false,
         doingRequest: false
@@ -17,32 +20,40 @@ angular.module('RJBikeApp.controllers').controller('DashboardCtrl', ['$scope', '
     var addNewBike;
 
     function init() {
-        getAllBikes();
-        $scope.$on('show-modal', function() {
-            $scope.toggleModal();
+        var s = $scope;
+        s.getPagedBikes(1, s.pageSize, s.showSold);
+        s.$on('show-modal', function() {
+            s.toggleModal();
         });
         Bike.getBikeDataValues().then(function(success) {
-            $scope.bikeDataValues = success;
+            s.bikeDataValues = success;
         });
     }
 
-    function getAllBikes() {
-        Bike.getAllBikes().then(function(success) {
-            $scope.bikes = success.reverse();
+    $scope.getPagedBikes = function(pageNum, pageSize, getSoldBikes) {
+        var s = $scope;
+        if(pageNum < s.totalPages - 4) {
+            s.currentPageNum = pageNum;
+        }
+        s.pageSize = pageSize;
+        Bike.getPagedBikes(pageNum, pageSize, getSoldBikes).then(function(success) {
+            s.bikeData = success;
+            s.totalPages = success.PageCount;
         });
-    }
+    };
 
     $scope.deleteBike = function(bikeID) {
+        var s = $scope;
         var confirmDelete = confirm("Are you sure you want to delete this bike?");
-        $scope.doingRequest = true;
+        s.doingRequest = true;
         if(confirmDelete) {
             Bike.deleteBike(bikeID).then(function() {
-                getAllBikes();
+                s.getPagedBikes(s.currentPageNum, s.pageSize, s.showSold);
                 alert("The selected bike has been deleted.");
-                $scope.doingRequest = false;
+                s.doingRequest = false;
             });
         } else {
-            $scope.doingRequest = false;
+            s.doingRequest = false;
             return;
         }
     };
@@ -82,7 +93,7 @@ angular.module('RJBikeApp.controllers').controller('DashboardCtrl', ['$scope', '
             bikeObj.Cost = bikeObj.Price * .8;
             bikeObj.Sold = bikeObj.Sold ? bikeObj.Sold : false;
             Bike.addBike(bikeObj).then(function(data) {
-                getAllBikes();
+                $scope.getPagedBikes(1, $scope.pageSize, bikeObj.Sold);
                 alert("Bike Added!");
                 $rootScope.$broadcast('close-modal');
                 s.doingRequest = false;
@@ -92,7 +103,7 @@ angular.module('RJBikeApp.controllers').controller('DashboardCtrl', ['$scope', '
             var confirmDelete = confirm("Are the changes to this bike correct?");
             if(confirmDelete) {
                 Bike.editBike(bikeObj).then(function() {
-                    getAllBikes();
+                    $scope.getPagedBikes(1, $scope.pageSize, bikeObj.Sold);
                     alert("The bike is fixed!");
                     $rootScope.$broadcast('close-modal');
                     s.doingRequest = false;

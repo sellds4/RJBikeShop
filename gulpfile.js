@@ -5,7 +5,7 @@ var gulp = require('gulp'),
     clean = require('gulp-clean'),
     jeet = require('jeet'),
     rupture = require('rupture'),
-    bootstrap = require('bootstrap-stylus'),
+    bootstrap = require('bootstrap-styl'),
     paths = {
         templates: ['./client/jade/index.jade', './client/jade/partials/*.jade', './client/stylus/*.styl']
     };

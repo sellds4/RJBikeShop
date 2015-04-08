@@ -19,7 +19,7 @@ dashboard-header
                     th Gender
                     th.edit-col Edit?
                     th.delete-col Delete?
-                tr(ng-repeat="bike in bikeData.BikeList | filter: bikeSearchText", ng-show="bike.Sold === view.showSold")
+                tr(ng-repeat="bike in bikeData.BikeList | filter: bikeSearchText")
                     td {{bike.MakeString}}
                     td {{bike.Model}}
                     td {{bike.BikeTypeString}}
@@ -33,7 +33,7 @@ dashboard-header
                     td
                         img.red-x(ng-click="deleteBike(bike.Id)", src="/Static/app/img/red-x.png")
         .bikes-cards(ng-show="!view.list")
-            .card-container(ng-repeat="bike in bikeData.BikeList | filter: bikeSearchText", ng-show="bike.Sold === view.showSold")
+            .card-container(ng-repeat="bike in bikeData.BikeList | filter: bikeSearchText")
                 .corner-icons
                     img.red-x-small(ng-click="deleteBike(bike.Id)", src="/Static/app/img/red-x.png")
                     img.edit-icon-small(ng-click="toggleModal(bike)", src="/Static/app/img/edit-icon.png")

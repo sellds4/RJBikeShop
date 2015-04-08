@@ -42,20 +42,22 @@ namespace RJBikeShop.Controllers
             return db.Bikes;
         }
 
-        // GET: api/Bike with data
-        [ResponseType(typeof(PagedResult<Bike>))]
-        public IHttpActionResult GetBikes(int pageNum, int pageSize)
+        // GET: api/Bike/Pages
+        //[ResponseType(typeof(PagedResult<Bike>))]
+        [Route("Pages")]
+        public PagedResult<Bike> GetBikes(int pageNum, int pageSize, bool getSoldBikes)
         {
             int skip = (pageNum - 1) * pageSize;
-            int totalBikeCount = db.Bikes.Count();
+            int totalBikeCount = db.Bikes.Where(x => x.Sold == getSoldBikes).Count();
 
             var bikes = db.Bikes
                 .OrderByDescending(x => x.Id)
+                .Where(x => x.Sold == getSoldBikes)
                 .Skip(skip)
                 .Take(pageSize)
                 .ToList();
 
-            return Ok(new PagedResult<Bike>(bikes, pageNum, pageSize, totalBikeCount));
+            return new PagedResult<Bike>(bikes, pageNum, pageSize, totalBikeCount);
         }
 
         // GET: api/Bike/5

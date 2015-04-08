@@ -13,9 +13,10 @@ angular.module('RJBikeApp.services').service('BikeService', ['$q', '$http', func
         return d.promise;
     };
 
-    this.getPagedBikes = function(bikeReq) {
-        var d = $q.defer();
-        $http.get('/api/Bike', bikeReq).success(function(data) {
+    this.getPagedBikes = function(pageNum, pageSize, getSoldBikes) {
+        var d = $q.defer(),
+            url = '?pageNum=' + pageNum + '&pageSize=' + pageSize + '&getSoldBikes=' + getSoldBikes;
+        $http.get('/api/Bike/Pages' + url).success(function(data) {
             d.resolve(data);
         }).error(function(error) {
             d.reject(error);
