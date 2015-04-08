@@ -1,12 +1,12 @@
 
 <nav>
   <ul class="pagination">
-    <li ng-click="getPagedBikes(currentPageNum - 1, pageSize, showSold)" ng-class="{'disabled': currentPageNum === 1}"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
-    <li ng-click="getPagedBikes(currentPageNum, pageSize, showSold)" ng-class="{'active': currentPageNum &lt;= totalPages - 4}"><a href="#">{{ currentPageNum }}</a></li>
-    <li ng-click="getPagedBikes(currentPageNum + 1, pageSize, showSold)" ng-class="{'active': currentPageNum + 1 === totalPages - 3}" ng-show="totalPages &gt; 1"><a href="#">{{ currentPageNum + 1 }}</a></li>
-    <li ng-click="getPagedBikes(currentPageNum + 2, pageSize, showSold)" ng-class="{'active': currentPageNum + 2 === totalPages - 2}" ng-show="totalPages &gt; 2"><a href="#">{{ currentPageNum + 2 }}</a></li>
-    <li ng-click="getPagedBikes(currentPageNum + 3, pageSize, showSold)" ng-class="{'active': currentPageNum + 3 === totalPages - 1}" ng-show="totalPages &gt; 3"><a href="#">{{ currentPageNum + 3 }}</a></li>
-    <li ng-click="getPagedBikes(currentPageNum + 4, pageSize, showSold)" ng-class="{'active': currentPageNum + 4 === totalPages}" ng-show="totalPages &gt; 4"><a href="#">{{ currentPageNum + 4 }}</a></li>
-    <li ng-click="getPagedBikes(currentPageNum + 5, pageSize, showSold)" ng-class="{'disabled': currentPageNum &gt; totalPages - 5}"><a href="#" aria-label="Next"><span aria-hidden="true">&raquo</span></a></li>
+    <li ng-click="pageClicked(currentPageNum - 1)" ng-class="{'disabled': currentPageNum === 1}"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+    <li ng-click="pageClicked(1)" ng-show="currentPageNum &gt; 4 &amp;&amp; totalPages &gt; 5"><a href="#">1</a></li>
+    <li ng-show="currentPageNum &gt; 4 &amp;&amp; totalPages &gt; 5"><a href="#">...</a></li>
+    <li ng-repeat="page in pageArray" ng-click="pageClicked(page)" ng-class="{'active': page === currentPageNum}" ng-show="(currentPageNum &lt;= 2 &amp;&amp; page &lt;=5) || (page &lt;= currentPageNum + 2 &amp;&amp; page &gt;= currentPageNum - 2)"><a href="#">{{ page }}</a></li>
+    <li ng-show="currentPageNum &lt;= totalPages - 4 &amp;&amp; totalPages &gt; 5"> <a href="#">...</a></li>
+    <li ng-click="pageClicked(totalPages)" ng-class="{'active': page === currentPageNum}" ng-show="currentPageNum &lt; totalPages - 3 &amp;&amp; totalPages &gt; 5"><a href="#">{{ totalPages }}</a></li>
+    <li ng-click="pageClicked(currentPageNum + 1)" ng-class="{'disabled': currentPageNum + 1 &gt; totalPages}"><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
   </ul>
 </nav>

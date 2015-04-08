@@ -17,6 +17,8 @@ angular.module('RJBikeApp.controllers').controller('DashboardCtrl', ['$scope', '
         doingRequest: false
     });
 
+    // var pagesCreated = false,
+    //     addNewBike;
     var addNewBike;
 
     function init() {
@@ -32,13 +34,15 @@ angular.module('RJBikeApp.controllers').controller('DashboardCtrl', ['$scope', '
 
     $scope.getPagedBikes = function(pageNum, pageSize, getSoldBikes) {
         var s = $scope;
-        if(pageNum <= s.totalPages - 4) {
-            s.currentPageNum = pageNum;
-        }
+        s.currentPageNum = pageNum;
         s.pageSize = pageSize;
         Bike.getPagedBikes(pageNum, pageSize, getSoldBikes).then(function(success) {
             s.bikeData = success;
             s.totalPages = success.PageCount;
+            // if(!pagesCreated) {
+            $rootScope.$broadcast('create-array');
+                // pagesCreated = true;
+            // }
         });
     };
 
@@ -92,8 +96,9 @@ angular.module('RJBikeApp.controllers').controller('DashboardCtrl', ['$scope', '
         if(addNewBike) {
             bikeObj.Cost = bikeObj.Price * .8;
             bikeObj.Sold = bikeObj.Sold ? bikeObj.Sold : false;
-            Bike.addBike(bikeObj).then(function(data) {
-                $scope.getPagedBikes(1, $scope.pageSize, bikeObj.Sold);
+            Bike.addBike(bikeObj).then(function() {
+                s.getPagedBikes(1, s.pageSize, bikeObj.Sold);
+                s.showSold = bikeObj.Sold;
                 alert("Bike Added!");
                 $rootScope.$broadcast('close-modal');
                 s.doingRequest = false;
@@ -103,7 +108,8 @@ angular.module('RJBikeApp.controllers').controller('DashboardCtrl', ['$scope', '
             var confirmDelete = confirm("Are the changes to this bike correct?");
             if(confirmDelete) {
                 Bike.editBike(bikeObj).then(function() {
-                    $scope.getPagedBikes(1, $scope.pageSize, bikeObj.Sold);
+                    s.getPagedBikes(1, s.pageSize, bikeObj.Sold);
+                    s.showSold = bikeObj.Sold;
                     alert("The bike is fixed!");
                     $rootScope.$broadcast('close-modal');
                     s.doingRequest = false;

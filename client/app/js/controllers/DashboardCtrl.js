@@ -17,6 +17,8 @@ angular.module('RJBikeApp.controllers').controller('DashboardCtrl', ['$scope', '
         doingRequest: false
     });
 
+    // var pagesCreated = false,
+    //     addNewBike;
     var addNewBike;
 
     function init() {
@@ -32,13 +34,15 @@ angular.module('RJBikeApp.controllers').controller('DashboardCtrl', ['$scope', '
 
     $scope.getPagedBikes = function(pageNum, pageSize, getSoldBikes) {
         var s = $scope;
-        if(pageNum <= s.totalPages - 4) {
-            s.currentPageNum = pageNum;
-        }
+        s.currentPageNum = pageNum;
         s.pageSize = pageSize;
         Bike.getPagedBikes(pageNum, pageSize, getSoldBikes).then(function(success) {
             s.bikeData = success;
             s.totalPages = success.PageCount;
+            // if(!pagesCreated) {
+            $rootScope.$broadcast('create-array');
+                // pagesCreated = true;
+            // }
         });
     };
 
