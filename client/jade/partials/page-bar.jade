@@ -7,7 +7,7 @@ nav
             a(href="#") 1
         li(ng-show="currentPageNum > 4 && totalPages > 5")
             a(href="#") ...
-        li(ng-repeat="page in pageArray", ng-click="pageClicked(page)", ng-class="{'active': page === currentPageNum}", ng-show="(currentPageNum <= 2 && page <=5) || (page <= currentPageNum + 2 && page >= currentPageNum - 2)")
+        li(ng-repeat="page in pageArray", ng-click="pageClicked(page)", ng-class="{'active': page === currentPageNum}", ng-show="(currentPageNum <= 2 && page <= 5) || (page <= currentPageNum + 2 && page >= currentPageNum - 2) || (currentPageNum >= totalPages - 2 && page >= totalPages - 4)")
             a(href="#") {{ page }}
         li(ng-show="currentPageNum <= totalPages - 4 && totalPages > 5") 
             a(href="#") ...
