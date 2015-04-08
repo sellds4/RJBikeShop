@@ -4,8 +4,8 @@ nav
             .image-container
                 img.bike-icon(src="/Static/app/img/bike.png")
             .control-text View 
-                span(ng-show="view.showSold") Unsold
-                span(ng-show="!view.showSold") Sold
+                span(ng-show="showSold") Unsold
+                span(ng-show="!showSold") Sold
         .control-container(ng-click="view.list = !view.list")
             .image-container
                 img(src="/Static/app/img/double-arrow.png")

@@ -32,7 +32,7 @@ angular.module('RJBikeApp.controllers').controller('DashboardCtrl', ['$scope', '
 
     $scope.getPagedBikes = function(pageNum, pageSize, getSoldBikes) {
         var s = $scope;
-        if(pageNum < s.totalPages - 4) {
+        if(pageNum <= s.totalPages - 4) {
             s.currentPageNum = pageNum;
         }
         s.pageSize = pageSize;

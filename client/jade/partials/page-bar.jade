@@ -3,16 +3,16 @@ nav
         li(ng-click="getPagedBikes(currentPageNum - 1, pageSize, showSold)", ng-class="{'disabled': currentPageNum === 1}")
             a(href="#", aria-label="Previous")
                 span(aria-hidden="true") &laquo;
-        li(ng-click="getPagedBikes(currentPageNum, pageSize, showSold)", class="disabled", ng-class="{'active': currentPageNum <= totalPages - 4}")
+        li(ng-click="getPagedBikes(currentPageNum, pageSize, showSold)", ng-class="{'active': currentPageNum <= totalPages - 4}")
             a(href="#") {{ currentPageNum }}
-        li(ng-click="getPagedBikes(currentPageNum + 1, pageSize, showSold)", class="disabled", ng-class="{'active': currentPageNum === totalPages - 3}", ng-show="totalPages > 0")
+        li(ng-click="getPagedBikes(currentPageNum + 1, pageSize, showSold)", ng-class="{'active': currentPageNum + 1 === totalPages - 3}", ng-show="totalPages > 1")
             a(href="#") {{ currentPageNum + 1 }}
-        li(ng-click="getPagedBikes(currentPageNum + 2, pageSize, showSold)", class="disabled", ng-class="{'active': currentPageNum === totalPages - 2}", ng-show="totalPages > 1")
+        li(ng-click="getPagedBikes(currentPageNum + 2, pageSize, showSold)", ng-class="{'active': currentPageNum + 2 === totalPages - 2}", ng-show="totalPages > 2")
             a(href="#") {{ currentPageNum + 2 }}
-        li(ng-click="getPagedBikes(currentPageNum + 3, pageSize, showSold)", class="disabled", ng-class="{'active': currentPageNum === totalPages - 1}", ng-show="totalPages > 2")
+        li(ng-click="getPagedBikes(currentPageNum + 3, pageSize, showSold)", ng-class="{'active': currentPageNum + 3 === totalPages - 1}", ng-show="totalPages > 3")
             a(href="#") {{ currentPageNum + 3 }}
-        li(ng-click="getPagedBikes(currentPageNum + 4, pageSize, showSold)", class="disabled", , ng-class="{'active': currentPageNum === totalPages}", ng-show="totalPages > 3")
+        li(ng-click="getPagedBikes(currentPageNum + 4, pageSize, showSold)", ng-class="{'active': currentPageNum + 4 === totalPages}", ng-show="totalPages > 4")
             a(href="#") {{ currentPageNum + 4 }}
-        li(ng-click="getPagedBikes(currentPageNum + 5, pageSize, showSold)", ng-class="{'disabled': currentPageNum > totalPages - 5}", ng-show="totalPages > 4")
+        li(ng-click="getPagedBikes(currentPageNum + 5, pageSize, showSold)", ng-class="{'disabled': currentPageNum > totalPages - 5}")
             a(href="#", aria-label="Next")
                 span(aria-hidden="true") &raquo
