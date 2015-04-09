@@ -6588,7 +6588,8 @@ button.close {
 .bikes-container .search-container .form-group img {
   height: 20px;
   position: absolute;
-  padding: 2px 0 0 5px;
+  padding-left: 5px;
+  top: 28px;
 }
 .bikes-container .search-container .form-group input {
   line-height: 24px;
@@ -6620,6 +6621,9 @@ button.close {
   box-shadow: 3px 3px 5px #888;
   box-sizing: border-box;
   margin-bottom: 10px;
+}
+.bikes-container .card-container table {
+  margin-bottom: 0;
 }
 .bikes-container .card-container .corner-icons {
   top: 5px;

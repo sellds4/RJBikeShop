@@ -45,32 +45,39 @@ dashboard-header
                                     td.text-center
                                         img.red-x(ng-click="deleteBike(bike.Id)", src="/Static/app/img/red-x.png")
                     .bikes-cards(ng-show="!list")
-                        .card-container.col-lg-4.col-md-6.col-xs-12(ng-repeat="bike in bikeData.BikeList | filter: bikeSearchText")
-                            .corner-icons
-                                img.red-x-small(ng-click="deleteBike(bike.Id)", src="/Static/app/img/red-x.png")
-                                img.edit-icon-small(ng-click="toggleModal(bike)", src="/Static/app/img/edit-icon.png")
-                            .bike-pic(style="height:150px")
-                            .description-container
-                                table.table.table-striped.table-bordered
-                                    tr
-                                        th Make:
-                                        td {{bike.MakeString}}
-                                        th Model:
-                                        td {{bike.Model}}
-                                    tr
-                                        th Type:
-                                        td {{bike.BikeTypeString}}
-                                        th Size:
-                                        td {{bike.FrameSize}} + '"'
-                                    tr
-                                        th Year:
-                                        td {{bike.Year}}
-                                        th Price:
-                                        td {{bike.Price | currency}}
-                                    tr
-                                        th Color:
-                                        td {{bike.ColorString}}
-                                        th Gender:
-                                        td {{bike.GenderString}}
+                        .row
+                            .col-lg-4.col-md-6.col-xs-12(ng-repeat-start="bike in bikeData.BikeList | filter: bikeSearchText")
+                                .card-container
+                                    .corner-icons
+                                        img.red-x-small(ng-click="deleteBike(bike.Id)", src="/Static/app/img/red-x.png")
+                                        img.edit-icon-small(ng-click="toggleModal(bike)", src="/Static/app/img/edit-icon.png")
+                                    .bike-pic(style="height:150px")
+                                    .description-container
+                                        .table-responsive
+                                            table.table.table-striped.table-bordered
+                                                tr
+                                                    th Make:
+                                                    td {{bike.MakeString}}
+                                                    th Model:
+                                                    td {{bike.Model}}
+                                                tr
+                                                    th Type:
+                                                    td {{bike.BikeTypeString}}
+                                                    th Size:
+                                                    td {{bike.FrameSize}} + '"'
+                                                tr
+                                                    th Year:
+                                                    td {{bike.Year}}
+                                                    th Price:
+                                                    td {{bike.Price | currency}}
+                                                tr
+                                                    th Color:
+                                                    td {{bike.ColorString}}
+                                                    th Gender:
+                                                    td {{bike.GenderString}}
+                            .clearfix.visible-lg-block(ng-if="$index%3 == 2")
+                            .clearfix.visible-md-block(ng-if="$index%2 == 1")
+                            .clearfix.visible-xs-block
+                            .div(ng-repeat-end="")
     modal-dialog(show="modalShown", height="550px")
         .bike-modal-content(ng-include="'Static/app/partials/bike-modal-content.html'")

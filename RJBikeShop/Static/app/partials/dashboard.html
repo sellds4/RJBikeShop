@@ -54,37 +54,47 @@
             </div>
           </div>
           <div ng-show="!list" class="bikes-cards">
-            <div ng-repeat="bike in bikeData.BikeList | filter: bikeSearchText" class="card-container col-lg-4 col-md-6 col-xs-12">
-              <div class="corner-icons"><img ng-click="deleteBike(bike.Id)" src="/Static/app/img/red-x.png" class="red-x-small"/><img ng-click="toggleModal(bike)" src="/Static/app/img/edit-icon.png" class="edit-icon-small"/></div>
-              <div style="height:150px" class="bike-pic"></div>
-              <div class="description-container">
-                <table class="table table-striped table-bordered">
-                  <tr>
-                    <th>Make:</th>
-                    <td>{{bike.MakeString}}</td>
-                    <th>Model:</th>
-                    <td>{{bike.Model}}</td>
-                  </tr>
-                  <tr>
-                    <th>Type:</th>
-                    <td>{{bike.BikeTypeString}}</td>
-                    <th>Size:</th>
-                    <td>{{bike.FrameSize}} + '"'</td>
-                  </tr>
-                  <tr>
-                    <th>Year:</th>
-                    <td>{{bike.Year}}</td>
-                    <th>Price:</th>
-                    <td>{{bike.Price | currency}}</td>
-                  </tr>
-                  <tr>
-                    <th>Color:</th>
-                    <td>{{bike.ColorString}}</td>
-                    <th>Gender:</th>
-                    <td>{{bike.GenderString}}</td>
-                  </tr>
-                </table>
+            <div class="row">
+              <div ng-repeat-start="bike in bikeData.BikeList | filter: bikeSearchText" class="col-lg-4 col-md-6 col-xs-12">
+                <div class="card-container">
+                  <div class="corner-icons"><img ng-click="deleteBike(bike.Id)" src="/Static/app/img/red-x.png" class="red-x-small"/><img ng-click="toggleModal(bike)" src="/Static/app/img/edit-icon.png" class="edit-icon-small"/></div>
+                  <div style="height:150px" class="bike-pic"></div>
+                  <div class="description-container">
+                    <div class="table-responsive">
+                      <table class="table table-striped table-bordered">
+                        <tr>
+                          <th>Make:</th>
+                          <td>{{bike.MakeString}}</td>
+                          <th>Model:</th>
+                          <td>{{bike.Model}}</td>
+                        </tr>
+                        <tr>
+                          <th>Type:</th>
+                          <td>{{bike.BikeTypeString}}</td>
+                          <th>Size:</th>
+                          <td>{{bike.FrameSize}} + '"'</td>
+                        </tr>
+                        <tr>
+                          <th>Year:</th>
+                          <td>{{bike.Year}}</td>
+                          <th>Price:</th>
+                          <td>{{bike.Price | currency}}</td>
+                        </tr>
+                        <tr>
+                          <th>Color:</th>
+                          <td>{{bike.ColorString}}</td>
+                          <th>Gender:</th>
+                          <td>{{bike.GenderString}}</td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
               </div>
+              <div ng-if="$index%3 == 2" class="clearfix visible-lg-block"></div>
+              <div ng-if="$index%2 == 1" class="clearfix visible-md-block"></div>
+              <div class="clearfix visible-xs-block"></div>
+              <div ng-repeat-end="" class="div"></div>
             </div>
           </div>
         </div>
