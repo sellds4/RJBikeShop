@@ -18,6 +18,7 @@ angular.module('RJBikeApp.controllers').controller('NewUserCtrl', ['$scope', '$l
         };
         s.doingRequest = true;
         Account.register(req).then(function(success) {
+            alert("Account created!")
             $location.path('/dashboard');
         }, function(error) {
             alert(error);

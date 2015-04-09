@@ -1368,7 +1368,7 @@ p {
   font-weight: 300;
   line-height: 1.4;
 }
-@media (min-width: 768px) {
+@media (min-width: 600px) {
   .lead {
     font-size: 21px;
   }
@@ -1513,7 +1513,7 @@ dt {
 dd {
   margin-left: 0;
 }
-@media (min-width: 768px) {
+@media (min-width: 600px) {
   .dl-horizontal dt {
     float: left;
     width: 160px;
@@ -1647,7 +1647,7 @@ pre code {
   padding-left: 15px;
   padding-right: 15px;
 }
-@media (min-width: 768px) {
+@media (min-width: 600px) {
   .container {
     width: 750px;
   }
@@ -1892,7 +1892,7 @@ pre code {
 .col-xs-offset-0 {
   margin-left: 0;
 }
-@media (min-width: 768px) {
+@media (min-width: 600px) {
   .col-sm-1,
   .col-sm-2,
   .col-sm-3,
@@ -2594,7 +2594,7 @@ table th[class*="col-"] {
   overflow-x: auto;
   min-height: 0.01%;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 599px) {
   .table-responsive {
     width: 100%;
     margin-bottom: 15px;
@@ -3072,7 +3072,7 @@ select[multiple].form-group-lg .form-control {
   margin-bottom: 10px;
   color: #666;
 }
-@media (min-width: 768px) {
+@media (min-width: 600px) {
   .form-inline .form-group,
   .navbar-form .form-group {
     display: inline-block;
@@ -3154,7 +3154,7 @@ select[multiple].form-group-lg .form-control {
   margin-left: -15px;
   margin-right: -15px;
 }
-@media (min-width: 768px) {
+@media (min-width: 600px) {
   .form-horizontal .control-label {
     text-align: right;
     margin-bottom: 0;
@@ -3164,12 +3164,12 @@ select[multiple].form-group-lg .form-control {
 .form-horizontal .has-feedback .form-control-feedback {
   right: 15px;
 }
-@media (min-width: 768px) {
+@media (min-width: 600px) {
   .form-horizontal .form-group-lg .control-label {
     padding-top: 14.333333px;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 600px) {
   .form-horizontal .form-group-sm .control-label {
     padding-top: 6px;
   }
@@ -3713,7 +3713,7 @@ tbody.collapse.in {
   bottom: 100%;
   margin-bottom: 2px;
 }
-@media (min-width: 768px) {
+@media (min-width: 600px) {
   .navbar-right .dropdown-menu {
     right: 0;
     left: auto;
@@ -4106,7 +4106,7 @@ tbody.collapse.in {
   top: auto;
   left: auto;
 }
-@media (min-width: 768px) {
+@media (min-width: 600px) {
   .nav-justified > li,
   .nav-tabs.nav-justified > li {
     display: table-cell;
@@ -4134,7 +4134,7 @@ tbody.collapse.in {
 .nav-tabs.nav-justified > .active > a:focus {
   border: 1px solid #ddd;
 }
-@media (min-width: 768px) {
+@media (min-width: 600px) {
   .nav-tabs-justified > li > a,
   .nav-tabs.nav-justified > li > a {
     border-bottom: 1px solid #ddd;
@@ -4166,12 +4166,12 @@ tbody.collapse.in {
   margin-bottom: 20px;
   border: 1px solid transparent;
 }
-@media (min-width: 768px) {
+@media (min-width: 600px) {
   .navbar {
     border-radius: 4px;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 600px) {
   .navbar-header {
     float: left;
   }
@@ -4187,7 +4187,7 @@ tbody.collapse.in {
 .navbar-collapse.in {
   overflow-y: auto;
 }
-@media (min-width: 768px) {
+@media (min-width: 600px) {
   .navbar-collapse {
     width: auto;
     border-top: 0;
@@ -4226,7 +4226,7 @@ tbody.collapse.in {
   margin-right: -15px;
   margin-left: -15px;
 }
-@media (min-width: 768px) {
+@media (min-width: 600px) {
   .container > .navbar-header,
   .container-fluid > .navbar-header,
   .container > .navbar-collapse,
@@ -4239,7 +4239,7 @@ tbody.collapse.in {
   z-index: 1000;
   border-width: 0 0 1px;
 }
-@media (min-width: 768px) {
+@media (min-width: 600px) {
   .navbar-static-top {
     border-radius: 0;
   }
@@ -4251,7 +4251,7 @@ tbody.collapse.in {
   left: 0;
   z-index: 1030;
 }
-@media (min-width: 768px) {
+@media (min-width: 600px) {
   .navbar-fixed-top,
   .navbar-fixed-bottom {
     border-radius: 0;
@@ -4280,7 +4280,7 @@ tbody.collapse.in {
 .navbar-brand > img {
   display: block;
 }
-@media (min-width: 768px) {
+@media (min-width: 600px) {
   .navbar > .container .navbar-brand,
   .navbar > .container-fluid .navbar-brand {
     margin-left: -15px;
@@ -4310,7 +4310,7 @@ tbody.collapse.in {
 .navbar-toggle .icon-bar + .icon-bar {
   margin-top: 4px;
 }
-@media (min-width: 768px) {
+@media (min-width: 600px) {
   .navbar-toggle {
     display: none;
   }
@@ -4323,7 +4323,7 @@ tbody.collapse.in {
   padding-bottom: 10px;
   line-height: 20px;
 }
-@media (max-width: 767px) {
+@media (max-width: 599px) {
   .navbar-nav .open .dropdown-menu {
     position: static;
     float: none;
@@ -4345,7 +4345,7 @@ tbody.collapse.in {
     background-image: none;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 600px) {
   .navbar-nav {
     float: left;
     margin: 0;
@@ -4368,7 +4368,7 @@ tbody.collapse.in {
   margin-top: 8px;
   margin-bottom: 8px;
 }
-@media (max-width: 767px) {
+@media (max-width: 599px) {
   .navbar-form .form-group {
     margin-bottom: 5px;
   }
@@ -4376,7 +4376,7 @@ tbody.collapse.in {
     margin-bottom: 0;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 600px) {
   .navbar-form {
     width: auto;
     border: 0;
@@ -4415,14 +4415,14 @@ tbody.collapse.in {
   margin-top: 15px;
   margin-bottom: 15px;
 }
-@media (min-width: 768px) {
+@media (min-width: 600px) {
   .navbar-text {
     float: left;
     margin-left: 15px;
     margin-right: 15px;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 600px) {
   .navbar-left {
     float: left !important;
   }
@@ -4489,7 +4489,7 @@ tbody.collapse.in {
   background-color: #e8e8e8;
   color: #555;
 }
-@media (max-width: 767px) {
+@media (max-width: 599px) {
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
     color: #777;
   }
@@ -4585,7 +4585,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   background-color: #1f1f1f;
   color: #fff;
 }
-@media (max-width: 767px) {
+@media (max-width: 599px) {
   .navbar-inverse .navbar-nav .open .dropdown-menu > .dropdown-header {
     border-color: #1f1f1f;
   }
@@ -4919,7 +4919,7 @@ a.badge:focus {
 .jumbotron .container {
   max-width: 100%;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 600px) {
   .jumbotron {
     padding: 48px 0;
   }
@@ -5838,7 +5838,7 @@ button.close {
   height: 50px;
   overflow: scroll;
 }
-@media (min-width: 768px) {
+@media (min-width: 600px) {
   .modal-dialog {
     width: 600px;
     margin: 30px auto;
@@ -6264,7 +6264,7 @@ button.close {
 .carousel-caption .btn {
   text-shadow: none;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 600px) {
   .carousel-control .glyphicon-chevron-left,
   .carousel-control .glyphicon-chevron-right,
   .carousel-control .icon-prev,
@@ -6314,7 +6314,7 @@ button.close {
 .visible-lg-inline-block {
   display: none !important;
 }
-@media (max-width: 767px) {
+@media (max-width: 599px) {
   .visible-xs {
     display: block !important;
   }
@@ -6329,22 +6329,22 @@ button.close {
     display: table-cell !important;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 599px) {
   .visible-xs-block {
     display: block !important;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 599px) {
   .visible-xs-inline {
     display: inline !important;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 599px) {
   .visible-xs-inline-block {
     display: inline-block !important;
   }
 }
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 600px) and (max-width: 991px) {
   .visible-sm {
     display: block !important;
   }
@@ -6359,17 +6359,17 @@ button.close {
     display: table-cell !important;
   }
 }
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 600px) and (max-width: 991px) {
   .visible-sm-block {
     display: block !important;
   }
 }
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 600px) and (max-width: 991px) {
   .visible-sm-inline {
     display: inline !important;
   }
 }
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 600px) and (max-width: 991px) {
   .visible-sm-inline-block {
     display: inline-block !important;
   }
@@ -6434,12 +6434,12 @@ button.close {
     display: inline-block !important;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 599px) {
   .hidden-xs {
     display: none !important;
   }
 }
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 600px) and (max-width: 991px) {
   .hidden-sm {
     display: none !important;
   }
