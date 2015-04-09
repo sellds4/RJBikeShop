@@ -1,12 +1,17 @@
 .page-content
     .login-container
-        .intro Welcome, Please log in.
-        .form-container
+        h4.text-center Welcome, Please log in.
+        .form-container.clearfix
             form(name="loginForm", ng-submit="submit()")
-                input(type="text", placeholder="username", name="username", ng-model="username", ng-required="true", autocomplete="off")
-                input(type="password", placeholder="password", name="password", ng-model="password", ng-min="6", ng-required="true", autocomplete="off")
-                .button-container
+                .form-group.col-sm-6.col-sm-offset-3.col-md-4.col-md-offset-4
+                    input.form-control(type="text", placeholder="username", name="username", ng-model="username", ng-required="true", autocomplete="off")
+                .form-group.col-sm-6.col-sm-offset-3.col-md-4.col-md-offset-4
+                    input.form-control(type="password", placeholder="password", name="password", ng-model="password", ng-min="6", ng-required="true", autocomplete="off")
+                .button-container.col-sm-6.col-sm-offset-3.col-md-4.col-md-offset-4
                     button(type="submit", ng-disabled="loginForm.$invalid || doingRequest", ng-class="{'grey-button': doingRequest}") Login
-        .logo-container
-            img.royal-jay-logo(src="/Static/app/img/royal-jay-logo.png")
-            .motto The <span>"Royalest"</span> of All Bike Shops
+        .logo-container.hidden-xs
+            img.royal-jay-logo-large(src="/Static/app/img/royal-jay-logo.png")
+            h2.text-center The <span>"Royalest"</span> of All Bike Shops
+        .logo-container.visible-xs-block
+            img.royal-jay-logo-small(src="/Static/app/img/royal-jay-logo.png")
+            h4.text-center The <span>"Royalest"</span> of All Bike Shops

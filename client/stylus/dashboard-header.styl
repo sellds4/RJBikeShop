@@ -1,24 +1,30 @@
 .dashboard-header
-    cf()
     position relative
     top 0
     left 0
     width: 100%
     background-color: lightgrey
     .dashboard-header-container
-        center(max-width: 980px, pad: 0)
         padding: 10px 10px 10px 0
     .royal-jay-container
         .royal-jay-logo, .royal-jay-text
             float left
         .royal-jay-text
             margin: 2px 0 0 9px
+        .royal-jay-logo, .royal-jay-logo-xs
+            cursor pointer
         .royal-jay-logo
             height: 40px
-            cursor pointer
-    .logout
+        .royal-jay-logo-xs
+            height: 25px
+    .logout, .logout-xs
         font-weight: bold
         color: $dark-blue
         float right
-        padding-top: 14px
         cursor: pointer
+    .logout
+        height: 40px
+        line-height: 40px
+    .logout-xs
+        height: 20px
+        line-height: 20px

@@ -1,43 +1,22 @@
 .login-container, .new-user-container, .bike-info-container
-    width 100%
     margin-top 50px
-    .intro, .motto
-        text-align center
+    h4
         margin-bottom 10px
-    .form-container, .logo-container
-        margin 0 auto
-    .intro
-        font-size 18px
-    input, select, .button-container
-        stack()
-        width 40%
-        +tablet-portrait-below()
-            width 80%
     .form-container 
-        form
-            margin 0 auto
-        input, select
-            margin-bottom 10px
-        input
-            text-indent 5px
         select
             width 100%
             height 25px
             text-indent 1px
         .button-container
-            cf()
             button
                 float right
     .logo-container
         img
             display block
-            margin 20px auto 0px
-            +tablet-portrait-below()
-                height 40px
-                margin-bottom 10px
-        .motto    
-            font-size 30px
-        .motto span
+            margin 20px auto 10px           
+        img.royal-jay-logo-small
+            height 40px
+        h2 span, h4 span
             color $dark-blue
             font-style italic
 

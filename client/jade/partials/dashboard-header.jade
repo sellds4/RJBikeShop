@@ -1,5 +1,11 @@
-.dashboard-header
-    .dashboard-header-container
-        .royal-jay-container
-            img.royal-jay-logo(src="/Static/app/img/royal-jay-logo.png", ng-click="goHome()")
-        .logout(ng-click="logout()") Logout
+.dashboard-header.clearfix
+    .container.dashboard-header-container
+        .row
+            .col-xs-6
+                .royal-jay-container.hidden-xs
+                    img.royal-jay-logo(src="/Static/app/img/royal-jay-logo.png", ng-click="goHome()")
+                .royal-jay-container.visible-xs-block
+                    img.royal-jay-logo-xs(src="/Static/app/img/royal-jay-logo.png", ng-click="goHome()")
+            .col-xs-6
+                .logout.hidden-xs(ng-click="logout()") Logout
+                .logout-xs.visible-xs-block(ng-click="logout()") Logout

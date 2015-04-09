@@ -1,7 +1,15 @@
 
-<div class="dashboard-header">
-  <div class="dashboard-header-container">
-    <div class="royal-jay-container"><img src="/Static/app/img/royal-jay-logo.png" ng-click="goHome()" class="royal-jay-logo"/></div>
-    <div ng-click="logout()" class="logout">Logout</div>
+<div class="dashboard-header clearfix">
+  <div class="container dashboard-header-container">
+    <div class="row">
+      <div class="col-xs-6">
+        <div class="royal-jay-container hidden-xs"><img src="/Static/app/img/royal-jay-logo.png" ng-click="goHome()" class="royal-jay-logo"/></div>
+        <div class="royal-jay-container visible-xs-block"><img src="/Static/app/img/royal-jay-logo.png" ng-click="goHome()" class="royal-jay-logo-xs"/></div>
+      </div>
+      <div class="col-xs-6">
+        <div ng-click="logout()" class="logout hidden-xs">Logout</div>
+        <div ng-click="logout()" class="logout-xs visible-xs-block">Logout</div>
+      </div>
+    </div>
   </div>
 </div>

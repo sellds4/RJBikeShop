@@ -1,16 +1,24 @@
 dashboard-header
 .page-content
     .new-user-container
-        .intro Please enter the new user's information below.
-        .form-container
+        h4.text-center Please enter the new user's information below.
+        .form-container.clearfix
             form(name="newUserForm", ng-submit="submit()")
-                input(type="text", placeholder="first name", name="firstname", ng-model="firstname", ng-min="1", ng-max="50", ng-required="true", autocomplete="off")
-                input(type="text", placeholder="last name", name="lastname", ng-model="lastname", ng-min="1", ng-max="50", ng-required="true", autocomplete="off")
-                input(type="email", placeholder="enter an email", name="email", ng-model="email", ng-required="true", autocomplete="off")
-                input(type="password", placeholder="enter a password", name="password", ng-model="password", ng-min="6", ng-required="true", autocomplete="off")
-                input(type="password", placeholder="confirm your password", name="confirmpassword", ng-model="confirmpassword", ng-min="6", ng-required="true", autocomplete="off")
-                .button-container
+                .form-group.col-sm-6.col-sm-offset-3.col-md-4.col-md-offset-4
+                    input.form-control(type="text", placeholder="first name", name="firstname", ng-model="firstname", ng-min="1", ng-max="50", ng-required="true", autocomplete="off")
+                .form-group.col-sm-6.col-sm-offset-3.col-md-4.col-md-offset-4
+                    input.form-control(type="text", placeholder="last name", name="lastname", ng-model="lastname", ng-min="1", ng-max="50", ng-required="true", autocomplete="off")
+                .form-group.col-sm-6.col-sm-offset-3.col-md-4.col-md-offset-4
+                    input.form-control(type="email", placeholder="enter an email", name="email", ng-model="email", ng-required="true", autocomplete="off")
+                .form-group.col-sm-6.col-sm-offset-3.col-md-4.col-md-offset-4
+                    input.form-control(type="password", placeholder="enter a password", name="password", ng-model="password", ng-min="6", ng-required="true", autocomplete="off")
+                .form-group.col-sm-6.col-sm-offset-3.col-md-4.col-md-offset-4
+                    input.form-control(type="password", placeholder="confirm your password", name="confirmpassword", ng-model="confirmpassword", ng-min="6", ng-required="true", autocomplete="off")
+                .button-container.col-sm-6.col-sm-offset-3.col-md-4.col-md-offset-4
                     button(type="submit", ng-disabled="newUserForm.$invalid || doingRequest", ng-class="{'grey-button': doingRequest}") Add Account
-        .logo-container
-            img.royal-jay-logo(src="/Static/app/img/royal-jay-logo.png")
-            .motto The <span>"Royalest"</span> of All Bike Shops
+        .logo-container.hidden-xs
+            img.royal-jay-logo-large(src="/Static/app/img/royal-jay-logo.png")
+            h2.text-center The <span>"Royalest"</span> of All Bike Shops
+        .logo-container.visible-xs-block
+            img.royal-jay-logo-small(src="/Static/app/img/royal-jay-logo.png")
+            h4.text-center The <span>"Royalest"</span> of All Bike Shops

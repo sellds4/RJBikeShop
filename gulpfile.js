@@ -3,8 +3,6 @@ var gulp = require('gulp'),
     stylus = require('gulp-stylus'),
     rename = require('gulp-rename'),
     clean = require('gulp-clean'),
-    jeet = require('jeet'),
-    rupture = require('rupture'),
     bootstrap = require('bootstrap-styl'),
     paths = {
         templates: ['./client/jade/index.jade', './client/jade/partials/*.jade', './client/stylus/*.styl']
@@ -41,7 +39,7 @@ gulp.task('templates', ['cleantemplates'], function() {
     gulp.src('./client/stylus/main.styl')
         .pipe(stylus(
             {
-                use: [jeet(), rupture(), bootstrap()]
+                use: [bootstrap()]
             }
         ))
         .pipe(gulp.dest('./client/app/css'))
