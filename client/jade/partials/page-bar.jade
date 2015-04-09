@@ -1,18 +1,38 @@
-nav
-    ul.pagination
-        li(ng-click="pageClicked(currentPageNum - 1)", ng-class="{'disabled': currentPageNum === 1}")
-            a(href="#", aria-label="Previous")
-                span(aria-hidden="true") &laquo;
-        li(ng-click="pageClicked(1)", ng-show="currentPageNum > 4 && totalPages > 5")
-            a(href="#") 1
-        li(ng-show="currentPageNum > 4 && totalPages > 5")
-            a(href="#") ...
-        li(ng-repeat="page in pageArray", ng-click="pageClicked(page)", ng-class="{'active': page === currentPageNum}", ng-show="(currentPageNum <= 2 && page <= 5) || (page <= currentPageNum + 2 && page >= currentPageNum - 2) || (currentPageNum >= totalPages - 2 && page >= totalPages - 4)")
-            a(href="#") {{ page }}
-        li(ng-show="currentPageNum <= totalPages - 4 && totalPages > 5") 
-            a(href="#") ...
-        li(ng-click="pageClicked(totalPages)", ng-class="{'active': page === currentPageNum}", ng-show="currentPageNum < totalPages - 3 && totalPages > 5")
-            a(href="#") {{ totalPages }}
-        li(ng-click="pageClicked(currentPageNum + 1)", ng-class="{'disabled': currentPageNum + 1 > totalPages}")
-            a(href="#", aria-label="Next")
-                span(aria-hidden="true") &raquo;
+nav.clearfix
+    .container
+        .row
+            .col-xs-12
+            ul.pagination.pull-right.hidden-xs
+                li(ng-click="pageClicked(currentPageNum - 1)", ng-class="{'disabled': currentPageNum === 1}")
+                    a(href="#", aria-label="Previous")
+                        span(aria-hidden="true") &laquo;
+                li(ng-click="pageClicked(1)", ng-show="currentPageNum > 4 && totalPages > 5")
+                    a(href="#") 1
+                li(ng-show="currentPageNum > 4 && totalPages > 5")
+                    a(href="#") ...
+                li(ng-repeat="page in pageArray", ng-click="pageClicked(page)", ng-class="{'active': page === currentPageNum}", ng-show="(currentPageNum <= 2 && page <= 5) || (page <= currentPageNum + 2 && page >= currentPageNum - 2) || (currentPageNum >= totalPages - 2 && page >= totalPages - 4)")
+                    a(href="#") {{ page }}
+                li(ng-show="currentPageNum <= totalPages - 4 && totalPages > 5") 
+                    a(href="#") ...
+                li(ng-click="pageClicked(totalPages)", ng-class="{'active': page === currentPageNum}", ng-show="currentPageNum < totalPages - 3 && totalPages > 5")
+                    a(href="#") {{ totalPages }}
+                li(ng-click="pageClicked(currentPageNum + 1)", ng-class="{'disabled': currentPageNum + 1 > totalPages}")
+                    a(href="#", aria-label="Next")
+                        span(aria-hidden="true") &raquo;
+            ul.pagination.pagination-sm.pull-right.visible-xs-block
+                li(ng-click="pageClicked(currentPageNum - 1)", ng-class="{'disabled': currentPageNum === 1}")
+                    a(href="#", aria-label="Previous")
+                        span(aria-hidden="true") &laquo;
+                li(ng-click="pageClicked(1)", ng-show="currentPageNum > 4 && totalPages > 5")
+                    a(href="#") 1
+                li(ng-show="currentPageNum > 4 && totalPages > 5")
+                    a(href="#") ...
+                li(ng-repeat="page in pageArray", ng-click="pageClicked(page)", ng-class="{'active': page === currentPageNum}", ng-show="(currentPageNum <= 2 && page <= 5) || (page <= currentPageNum + 2 && page >= currentPageNum - 2) || (currentPageNum >= totalPages - 2 && page >= totalPages - 4)")
+                    a(href="#") {{ page }}
+                li(ng-show="currentPageNum <= totalPages - 4 && totalPages > 5") 
+                    a(href="#") ...
+                li(ng-click="pageClicked(totalPages)", ng-class="{'active': page === currentPageNum}", ng-show="currentPageNum < totalPages - 3 && totalPages > 5")
+                    a(href="#") {{ totalPages }}
+                li(ng-click="pageClicked(currentPageNum + 1)", ng-class="{'disabled': currentPageNum + 1 > totalPages}")
+                    a(href="#", aria-label="Next")
+                        span(aria-hidden="true") &raquo;

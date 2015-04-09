@@ -1,22 +1,53 @@
 nav
-    .dashboard-controls
-        .control-container(ng-click="toggleSold()")
-            .image-container
-                img.bike-icon(src="/Static/app/img/bike.png")
-            .control-text View 
-                span(ng-show="showSold") Unsold
-                span(ng-show="!showSold") Sold
-        .control-container(ng-click="view.list = !view.list")
-            .image-container
-                img(src="/Static/app/img/double-arrow.png")
-            .control-text View 
-                span(ng-show="view.list") Cards
-                span(ng-show="!view.list") List
-        .control-container(ng-click="showModal()")
-            .image-container
-                img(src="/Static/app/img/plus.png")
-            .control-text Add Bikes
-        .control-container(ng-click="goToNewUser()")
-            .image-container
-                img(src="/Static/app/img/bikegear.png")
-            .control-text Add Users
+    .container
+        .row
+            .col-xs-12
+                .dashboard-controls.hidden-xs
+                    .control-container(ng-click="toggleSold()")
+                        .image-container
+                            img.bike-icon(src="/Static/app/img/bike.png")
+                        .control-text View 
+                            span(ng-show="showSold") Unsold
+                            span(ng-show="!showSold") Sold
+                    .control-container(ng-click="view.list = !view.list")
+                        .image-container
+                            img(src="/Static/app/img/double-arrow.png")
+                        .control-text View 
+                            span(ng-show="view.list") Cards
+                            span(ng-show="!view.list") List
+                    .control-container(ng-click="showModal()")
+                        .image-container
+                            img(src="/Static/app/img/plus.png")
+                        .control-text Add Bikes
+                    .control-container(ng-click="goToNewUser()")
+                        .image-container
+                            img(src="/Static/app/img/bikegear.png")
+                        .control-text Add Users
+                .dashboard-controls-xs.visible-xs-block.navbar-fixed-bottom
+                    .container-fluid
+                        .row
+                            .col-xs-3
+                                .control-container(ng-click="toggleSold()")
+                                    .image-container
+                                        img.bike-icon(src="/Static/app/img/bike.png")
+                                    .control-text View 
+                                        span(ng-show="showSold") Unsold
+                                        span(ng-show="!showSold") Sold
+                            .col-xs-3
+                                .control-container(ng-click="view.list = !view.list")
+                                    .image-container
+                                        img(src="/Static/app/img/double-arrow.png")
+                                    .control-text View 
+                                        span(ng-show="view.list") Cards
+                                        span(ng-show="!view.list") List
+                            .col-xs-3
+                                .control-container(ng-click="showModal()")
+                                    .image-container
+                                        img(src="/Static/app/img/plus.png")
+                                    .control-text Add Bikes
+                            .col-xs-3
+                                .control-container(ng-click="goToNewUser()")
+                                    .image-container
+                                        img(src="/Static/app/img/bikegear.png")
+                                    .control-text Add Users
+

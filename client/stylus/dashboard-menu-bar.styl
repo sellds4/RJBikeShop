@@ -1,7 +1,4 @@
-.dashboard-controls
-    position fixed
-    margin 10px 0 0 20px
-    z-index 100
+.dashboard-controls, .dashboard-controls-xs
     .control-container
         background-color lightgrey
         height 50px
@@ -27,14 +24,12 @@
             .control-text
                 display block
                 text-align center
-            
-+tablet-portrait-below()
-    .dashboard-controls
-        background-color darkgrey
-        bottom 0
-        width 100%
-        margin 0
-        padding 10px
-        .control-container
-            col(1/4)
-            margin-bottom 0
+.dashboard-controls
+    position fixed
+    margin-top 10px
+    z-index 100
+.dashboard-controls-xs
+    background-color darkgrey
+    padding 10px
+    .control-container
+        margin-bottom 0

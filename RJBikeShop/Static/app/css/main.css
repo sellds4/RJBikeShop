@@ -6553,7 +6553,7 @@ button.close {
   width: 90%;
   margin: 0 auto;
 }
-.bike-info-container .input-label {
+.bike-info-container label {
   color: #005f9e;
   margin-left: 10px;
 }
@@ -6684,41 +6684,55 @@ table {
   height: 20px;
   line-height: 20px;
 }
-.dashboard-controls {
-  position: fixed;
-  margin: 10px 0 0 20px;
-  z-index: 100;
-}
-.dashboard-controls .control-container {
+.dashboard-controls .control-container,
+.dashboard-controls-xs .control-container {
   background-color: #d3d3d3;
   height: 50px;
   width: 50px;
   margin-bottom: 10px;
   cursor: pointer;
 }
-.dashboard-controls .control-container .image-container {
+.dashboard-controls .control-container .image-container,
+.dashboard-controls-xs .control-container .image-container {
   height: 50px;
 }
-.dashboard-controls .control-container .image-container img {
+.dashboard-controls .control-container .image-container img,
+.dashboard-controls-xs .control-container .image-container img {
   padding-top: 3px;
   display: table-cell;
   margin: 0 auto;
   width: 45px;
 }
-.dashboard-controls .control-container .control-text {
+.dashboard-controls .control-container .control-text,
+.dashboard-controls-xs .control-container .control-text {
   display: none;
   margin-top: 5px;
   color: #005f9e;
 }
-.dashboard-controls .control-container .image-container .bike-icon {
+.dashboard-controls .control-container .image-container .bike-icon,
+.dashboard-controls-xs .control-container .image-container .bike-icon {
   padding-top: 12px;
 }
-.dashboard-controls .control-container:hover {
+.dashboard-controls .control-container:hover,
+.dashboard-controls-xs .control-container:hover {
   margin-bottom: 47px;
 }
-.dashboard-controls .control-container:hover .control-text {
+.dashboard-controls .control-container:hover .control-text,
+.dashboard-controls-xs .control-container:hover .control-text {
   display: block;
   text-align: center;
+}
+.dashboard-controls {
+  position: fixed;
+  margin-top: 10px;
+  z-index: 100;
+}
+.dashboard-controls-xs {
+  background-color: #a9a9a9;
+  padding: 10px;
+}
+.dashboard-controls-xs .control-container {
+  margin-bottom: 0;
 }
 .nav-bar {
   position: fixed;
@@ -6793,6 +6807,9 @@ button {
   border-radius: 5px;
   padding: 7px 20px;
   cursor: pointer;
+}
+button:active {
+  background-color: #00396e;
 }
 .grey-button {
   background-color: #808080 !important;

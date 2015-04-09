@@ -1,52 +1,52 @@
 
 <div class="bike-info-container">
-  <div class="intro">Please enter the bike information below</div>
-  <div class="form-container">
+  <h4 class="text-center">Please enter the bike information below</h4>
+  <div class="form-container clearfix">
     <form name="newBikeForm" ng-submit="submitBike()">
-      <div class="input-container">
-        <div class="input-label">Make:</div>
-        <select name="new-bike-make" ng-model="newBike.MakeString" ng-required="true">
+      <div class="form-group">
+        <label>Make:</label>
+        <select id="new-bike-make" name="new-bike-make" ng-model="newBike.MakeString" ng-required="true">
           <option ng-repeat="make in bikeDataValues.makes | orderBy: make" value="{{make}}">{{make}}</option>
         </select>
       </div>
-      <div class="input-container">
-        <div class="input-label">Model:</div>
-        <input type="text" name="new-bike-model" ng-model="newBike.Model" ng-required="true" autocomplete="off"/>
+      <div class="form-group">
+        <label for="new-bike-model">Model:</label>
+        <input type="text" id="new-bike-model" name="new-bike-model" ng-model="newBike.Model" ng-required="true" autocomplete="off" class="form-control"/>
       </div>
-      <div class="input-container">
-        <div class="input-label">Type:</div>
-        <select name="new-bike-type" ng-model="newBike.BikeTypeString" ng-required="true">
+      <div class="form-group">
+        <label for="new-bike-type">Type:</label>
+        <select id="new-bike-type" name="new-bike-type" ng-model="newBike.BikeTypeString" ng-required="true">
           <option ng-repeat="type in bikeDataValues.types | orderBy: type" value="{{type}}">{{type}}</option>
         </select>
       </div>
-      <div class="input-container">
-        <div class="input-label">Size:</div>
-        <input type="text" name="new-bike-size" ng-model="newBike.FrameSize" ng-required="true" autocomplete="off"/>
+      <div class="form-group">
+        <label for="new-bike-size">Size:</label>
+        <input type="text" id="new-bike-size" name="new-bike-size" ng-model="newBike.FrameSize" ng-required="true" autocomplete="off" class="form-control"/>
       </div>
-      <div class="input-container">
-        <div class="input-label">Year:</div>
-        <input type="text" name="new-bike-year" ng-model="newBike.Year" ng-required="true" autocomplete="off"/>
+      <div class="form-group">
+        <label for="new-bike-year">Year:</label>
+        <input type="text" id="new-bike-year" name="new-bike-year" ng-model="newBike.Year" ng-required="true" autocomplete="off" class="form-control"/>
       </div>
-      <div class="input-container">
-        <div class="input-label">Price:</div>
-        <input type="phone" name="new-bike-price" ng-model="newBike.Price" ng-required="true" autocomplete="off"/>
+      <div class="form-group">
+        <label for="new-bike-price">Price:</label>
+        <input type="phone" id="new-bike-price" name="new-bike-price" ng-model="newBike.Price" ng-required="true" autocomplete="off" class="form-control"/>
       </div>
-      <div class="input-container">
-        <div class="input-label">Color:</div>
-        <select name="new-bike-color" ng-model="newBike.ColorString" ng-required="true">
+      <div class="form-group">
+        <label for="new-bike-color">Color:</label>
+        <select id="new-bike-color" name="new-bike-color" ng-model="newBike.ColorString" ng-required="true">
           <option ng-repeat="color in bikeDataValues.colors | orderBy: color" value="{{color}}">{{color}}</option>
         </select>
       </div>
-      <div class="input-container">
-        <div class="input-label">Gender:</div>
-        <select name="new-bike-gender" ng-model="newBike.GenderString" ng-required="true">
+      <div class="form-group">
+        <label for="new-bike-gender">Gender:</label>
+        <select id="new-bike-gender" name="new-bike-gender" ng-model="newBike.GenderString" ng-required="true">
           <option ng-repeat="gender in bikeDataValues.genders | orderBy: gender" value="{{gender}}">{{gender}}</option>
         </select>
       </div>
       <div class="button-container">
         <div class="checkbox-container">
-          <div class="input-label">Bike Sold </div>
-          <input type="checkbox" name="new-bike-sold" ng-model="newBike.Sold"/>
+          <label for="new-bike-sold">Bike Sold </label>
+          <input type="checkbox" id="new-bike-sold" name="new-bike-sold" ng-model="newBike.Sold" class="form-control"/>
         </div>
         <button type="submit" ng-disabled="newBikeForm.$invalid || doingRequest" ng-class="{'grey-button': doingRequest}">Submit</button>
       </div>
