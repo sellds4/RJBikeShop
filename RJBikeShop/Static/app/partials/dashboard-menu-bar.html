@@ -3,49 +3,51 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-2 col-md-1">
-        <div class="dashboard-controls hidden-xs">
-          <div ng-click="toggleSold()" class="control-container">
-            <div class="image-container"><img src="/Static/app/img/bike.png" class="bike-icon"/></div>
-            <div class="control-text">View <span ng-show="showSold">Unsold</span><span ng-show="!showSold">Sold</span></div>
+        <div class="dashboard-controls-container">
+          <div class="dashboard-controls hidden-xs">
+            <div ng-click="toggleSold()" class="control-container">
+              <div class="image-container"><img src="/Static/app/img/bike.png" class="bike-icon"/></div>
+              <div class="control-text">View <span ng-show="showSold">Unsold</span><span ng-show="!showSold">Sold</span></div>
+            </div>
+            <div ng-click="view.list = !view.list" class="control-container">
+              <div class="image-container"><img src="/Static/app/img/double-arrow.png"/></div>
+              <div class="control-text">View <span ng-show="view.list">Cards</span><span ng-show="!view.list">List</span></div>
+            </div>
+            <div ng-click="showModal()" class="control-container">
+              <div class="image-container"><img src="/Static/app/img/plus.png"/></div>
+              <div class="control-text">Add Bikes</div>
+            </div>
+            <div ng-click="goToNewUser()" class="control-container">
+              <div class="image-container"><img src="/Static/app/img/bikegear.png"/></div>
+              <div class="control-text">Add Users</div>
+            </div>
           </div>
-          <div ng-click="view.list = !view.list" class="control-container">
-            <div class="image-container"><img src="/Static/app/img/double-arrow.png"/></div>
-            <div class="control-text">View <span ng-show="view.list">Cards</span><span ng-show="!view.list">List</span></div>
-          </div>
-          <div ng-click="showModal()" class="control-container">
-            <div class="image-container"><img src="/Static/app/img/plus.png"/></div>
-            <div class="control-text">Add Bikes</div>
-          </div>
-          <div ng-click="goToNewUser()" class="control-container">
-            <div class="image-container"><img src="/Static/app/img/bikegear.png"/></div>
-            <div class="control-text">Add Users</div>
-          </div>
-        </div>
-        <div class="dashboard-controls-xs visible-xs-block navbar-fixed-bottom">
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-xs-3">
-                <div ng-click="toggleSold()" class="control-container">
-                  <div class="image-container"><img src="/Static/app/img/bike.png" class="bike-icon"/></div>
-                  <div class="control-text">View <span ng-show="showSold">Unsold</span><span ng-show="!showSold">Sold</span></div>
+          <div class="dashboard-controls-xs visible-xs-block navbar-fixed-bottom">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-xs-3">
+                  <div ng-click="toggleSold()" class="control-container">
+                    <div class="image-container"><img src="/Static/app/img/bike.png" class="bike-icon"/></div>
+                    <div class="control-text">View <span ng-show="showSold">Unsold</span><span ng-show="!showSold">Sold</span></div>
+                  </div>
                 </div>
-              </div>
-              <div class="col-xs-3">
-                <div ng-click="view.list = !view.list" class="control-container">
-                  <div class="image-container"><img src="/Static/app/img/double-arrow.png"/></div>
-                  <div class="control-text">View <span ng-show="view.list">Cards</span><span ng-show="!view.list">List</span></div>
+                <div class="col-xs-3">
+                  <div ng-click="view.list = !view.list" class="control-container">
+                    <div class="image-container"><img src="/Static/app/img/double-arrow.png"/></div>
+                    <div class="control-text">View <span ng-show="view.list">Cards</span><span ng-show="!view.list">List</span></div>
+                  </div>
                 </div>
-              </div>
-              <div class="col-xs-3">
-                <div ng-click="showModal()" class="control-container">
-                  <div class="image-container"><img src="/Static/app/img/plus.png"/></div>
-                  <div class="control-text">Add Bikes</div>
+                <div class="col-xs-3">
+                  <div ng-click="showModal()" class="control-container">
+                    <div class="image-container"><img src="/Static/app/img/plus.png"/></div>
+                    <div class="control-text">Add Bikes</div>
+                  </div>
                 </div>
-              </div>
-              <div class="col-xs-3">
-                <div ng-click="goToNewUser()" class="control-container">
-                  <div class="image-container"><img src="/Static/app/img/bikegear.png"/></div>
-                  <div class="control-text">Add Users</div>
+                <div class="col-xs-3">
+                  <div ng-click="goToNewUser()" class="control-container">
+                    <div class="image-container"><img src="/Static/app/img/bikegear.png"/></div>
+                    <div class="control-text">Add Users</div>
+                  </div>
                 </div>
               </div>
             </div>
