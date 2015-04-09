@@ -1,64 +1,76 @@
 dashboard-header
 .page-content
     dashboard-menu-bar
-    .bikes-container
-        .search-container
-            img(src="/Static/app/img/search-icon.png")
-            input(ng-model="bikeSearchText")
-        page-bar
-        .bikes-list(ng-show="view.list")
-            table
-                tr
-                    th Make
-                    th Model
-                    th Type
-                    th Size
-                    th Year
-                    th Price
-                    th Color
-                    th Gender
-                    th.edit-col Edit?
-                    th.delete-col Delete?
-                tr(ng-repeat="bike in bikeData.BikeList | filter: bikeSearchText")
-                    td {{bike.MakeString}}
-                    td {{bike.Model}}
-                    td {{bike.BikeTypeString}}
-                    td {{bike.FrameSize}}
-                    td {{bike.Year}}
-                    td {{bike.Price | currency}}
-                    td {{bike.ColorString}}
-                    td {{bike.GenderString}}
-                    td
-                        img.edit-icon(ng-click="toggleModal(bike)", src="/Static/app/img/edit-icon.png")
-                    td
-                        img.red-x(ng-click="deleteBike(bike.Id)", src="/Static/app/img/red-x.png")
-        .bikes-cards(ng-show="!view.list")
-            .card-container(ng-repeat="bike in bikeData.BikeList | filter: bikeSearchText")
-                .corner-icons
-                    img.red-x-small(ng-click="deleteBike(bike.Id)", src="/Static/app/img/red-x.png")
-                    img.edit-icon-small(ng-click="toggleModal(bike)", src="/Static/app/img/edit-icon.png")
-                .bike-pic(style="height:150px")
-                .description-container
-                    table
-                        tr
-                            th Make:
-                            td {{bike.MakeString}}
-                            th Model:
-                            td {{bike.Model}}
-                        tr
-                            th Type:
-                            td {{bike.BikeTypeString}}
-                            th Size:
-                            td {{bike.FrameSize}} + '"'
-                        tr
-                            th Year:
-                            td {{bike.Year}}
-                            th Price:
-                            td {{bike.Price | currency}}
-                        tr
-                            th Color:
-                            td {{bike.ColorString}}
-                            th Gender:
-                            td {{bike.GenderString}}
+    .bikes-container.container
+        .row
+            .col-md-11.col-md-offset-1.col-sm-10.col-sm-offset-2.col-xs-12
+                .search-container
+                    .hidden-xs
+                        form
+                            .form-group
+                                img(src="/Static/app/img/search-icon.png")
+                                input.form-control(ng-model="bikeSearchText")
+                    .visible-xs-block
+                        form
+                            .form-group
+                                img(src="/Static/app/img/search-icon.png")
+                                input.form-control(ng-model="bikeSearchText")
+                page-bar
+                .bike-list-container
+                    .bikes-list(ng-show="view.list")
+                        .table-responsive
+                            table.table.table-striped
+                                tr
+                                    th.text-center Make
+                                    th.text-center Model
+                                    th.text-center Type
+                                    th.text-center Size
+                                    th.text-center Year
+                                    th.text-center Price
+                                    th.text-center Color
+                                    th.text-center Gender
+                                    th.text-center.edit-col Edit?
+                                    th.text-center.delete-col Delete?
+                                tr(ng-repeat="bike in bikeData.BikeList | filter: bikeSearchText")
+                                    td.text-center {{bike.MakeString}}
+                                    td.text-center {{bike.Model}}
+                                    td.text-center {{bike.BikeTypeString}}
+                                    td.text-center {{bike.FrameSize}}
+                                    td.text-center {{bike.Year}}
+                                    td.text-center {{bike.Price | currency}}
+                                    td.text-center {{bike.ColorString}}
+                                    td.text-center {{bike.GenderString}}
+                                    td.text-center
+                                        img.edit-icon(ng-click="toggleModal(bike)", src="/Static/app/img/edit-icon.png")
+                                    td.text-center
+                                        img.red-x(ng-click="deleteBike(bike.Id)", src="/Static/app/img/red-x.png")
+                    .bikes-cards(ng-show="!view.list")
+                        .card-container(ng-repeat="bike in bikeData.BikeList | filter: bikeSearchText")
+                            .corner-icons
+                                img.red-x-small(ng-click="deleteBike(bike.Id)", src="/Static/app/img/red-x.png")
+                                img.edit-icon-small(ng-click="toggleModal(bike)", src="/Static/app/img/edit-icon.png")
+                            .bike-pic(style="height:150px")
+                            .description-container
+                                table
+                                    tr
+                                        th Make:
+                                        td {{bike.MakeString}}
+                                        th Model:
+                                        td {{bike.Model}}
+                                    tr
+                                        th Type:
+                                        td {{bike.BikeTypeString}}
+                                        th Size:
+                                        td {{bike.FrameSize}} + '"'
+                                    tr
+                                        th Year:
+                                        td {{bike.Year}}
+                                        th Price:
+                                        td {{bike.Price | currency}}
+                                    tr
+                                        th Color:
+                                        td {{bike.ColorString}}
+                                        th Gender:
+                                        td {{bike.GenderString}}
     modal-dialog(show="modalShown", height="550px")
         .bike-modal-content(ng-include="'Static/app/partials/bike-modal-content.html'")

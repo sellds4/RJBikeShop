@@ -2,70 +2,91 @@
 <dashboard-header></dashboard-header>
 <div class="page-content">
   <dashboard-menu-bar></dashboard-menu-bar>
-  <div class="bikes-container">
-    <div class="search-container"><img src="/Static/app/img/search-icon.png"/>
-      <input ng-model="bikeSearchText"/>
-    </div>
-    <page-bar></page-bar>
-    <div ng-show="view.list" class="bikes-list">
-      <table>
-        <tr>
-          <th>Make</th>
-          <th>Model</th>
-          <th>Type</th>
-          <th>Size</th>
-          <th>Year</th>
-          <th>Price</th>
-          <th>Color</th>
-          <th>Gender</th>
-          <th class="edit-col">Edit?</th>
-          <th class="delete-col">Delete?</th>
-        </tr>
-        <tr ng-repeat="bike in bikeData.BikeList | filter: bikeSearchText">
-          <td>{{bike.MakeString}}</td>
-          <td>{{bike.Model}}</td>
-          <td>{{bike.BikeTypeString}}</td>
-          <td>{{bike.FrameSize}}</td>
-          <td>{{bike.Year}}</td>
-          <td>{{bike.Price | currency}}</td>
-          <td>{{bike.ColorString}}</td>
-          <td>{{bike.GenderString}}</td>
-          <td><img ng-click="toggleModal(bike)" src="/Static/app/img/edit-icon.png" class="edit-icon"/></td>
-          <td><img ng-click="deleteBike(bike.Id)" src="/Static/app/img/red-x.png" class="red-x"/></td>
-        </tr>
-      </table>
-    </div>
-    <div ng-show="!view.list" class="bikes-cards">
-      <div ng-repeat="bike in bikeData.BikeList | filter: bikeSearchText" class="card-container">
-        <div class="corner-icons"><img ng-click="deleteBike(bike.Id)" src="/Static/app/img/red-x.png" class="red-x-small"/><img ng-click="toggleModal(bike)" src="/Static/app/img/edit-icon.png" class="edit-icon-small"/></div>
-        <div style="height:150px" class="bike-pic"></div>
-        <div class="description-container">
-          <table>
-            <tr>
-              <th>Make:</th>
-              <td>{{bike.MakeString}}</td>
-              <th>Model:</th>
-              <td>{{bike.Model}}</td>
-            </tr>
-            <tr>
-              <th>Type:</th>
-              <td>{{bike.BikeTypeString}}</td>
-              <th>Size:</th>
-              <td>{{bike.FrameSize}} + '"'</td>
-            </tr>
-            <tr>
-              <th>Year:</th>
-              <td>{{bike.Year}}</td>
-              <th>Price:</th>
-              <td>{{bike.Price | currency}}</td>
-            </tr>
-            <tr>
-              <th>Color:</th>
-              <td>{{bike.ColorString}}</td>
-              <th>Gender:</th>
-              <td>{{bike.GenderString}}</td>
-            </tr>
-          </table>
+  <div class="bikes-container container">
+    <div class="row">
+      <div class="col-md-11 col-md-offset-1 col-sm-10 col-sm-offset-2 col-xs-12">
+        <div class="search-container">
+          <div class="hidden-xs">
+            <form>
+              <div class="form-group"><img src="/Static/app/img/search-icon.png"/>
+                <input ng-model="bikeSearchText" class="form-control"/>
+              </div>
+            </form>
+          </div>
+          <div class="visible-xs-block">
+            <form>
+              <div class="form-group"><img src="/Static/app/img/search-icon.png"/>
+                <input ng-model="bikeSearchText" class="form-control"/>
+              </div>
+            </form>
+          </div>
+        </div>
+        <page-bar></page-bar>
+        <div class="bike-list-container">
+          <div ng-show="view.list" class="bikes-list">
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <tr>
+                  <th class="text-center">Make</th>
+                  <th class="text-center">Model</th>
+                  <th class="text-center">Type</th>
+                  <th class="text-center">Size</th>
+                  <th class="text-center">Year</th>
+                  <th class="text-center">Price</th>
+                  <th class="text-center">Color</th>
+                  <th class="text-center">Gender</th>
+                  <th class="text-center edit-col">Edit?</th>
+                  <th class="text-center delete-col">Delete?</th>
+                </tr>
+                <tr ng-repeat="bike in bikeData.BikeList | filter: bikeSearchText">
+                  <td class="text-center">{{bike.MakeString}}</td>
+                  <td class="text-center">{{bike.Model}}</td>
+                  <td class="text-center">{{bike.BikeTypeString}}</td>
+                  <td class="text-center">{{bike.FrameSize}}</td>
+                  <td class="text-center">{{bike.Year}}</td>
+                  <td class="text-center">{{bike.Price | currency}}</td>
+                  <td class="text-center">{{bike.ColorString}}</td>
+                  <td class="text-center">{{bike.GenderString}}</td>
+                  <td class="text-center"><img ng-click="toggleModal(bike)" src="/Static/app/img/edit-icon.png" class="edit-icon"/></td>
+                  <td class="text-center"><img ng-click="deleteBike(bike.Id)" src="/Static/app/img/red-x.png" class="red-x"/></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div ng-show="!view.list" class="bikes-cards">
+            <div ng-repeat="bike in bikeData.BikeList | filter: bikeSearchText" class="card-container">
+              <div class="corner-icons"><img ng-click="deleteBike(bike.Id)" src="/Static/app/img/red-x.png" class="red-x-small"/><img ng-click="toggleModal(bike)" src="/Static/app/img/edit-icon.png" class="edit-icon-small"/></div>
+              <div style="height:150px" class="bike-pic"></div>
+              <div class="description-container">
+                <table>
+                  <tr>
+                    <th>Make:</th>
+                    <td>{{bike.MakeString}}</td>
+                    <th>Model:</th>
+                    <td>{{bike.Model}}</td>
+                  </tr>
+                  <tr>
+                    <th>Type:</th>
+                    <td>{{bike.BikeTypeString}}</td>
+                    <th>Size:</th>
+                    <td>{{bike.FrameSize}} + '"'</td>
+                  </tr>
+                  <tr>
+                    <th>Year:</th>
+                    <td>{{bike.Year}}</td>
+                    <th>Price:</th>
+                    <td>{{bike.Price | currency}}</td>
+                  </tr>
+                  <tr>
+                    <th>Color:</th>
+                    <td>{{bike.ColorString}}</td>
+                    <th>Gender:</th>
+                    <td>{{bike.GenderString}}</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

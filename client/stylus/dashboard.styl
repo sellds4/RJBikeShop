@@ -1,32 +1,25 @@
-table
-    width 100%
 .bikes-container
     .search-container
-        margin 15px 0
-        padding 0 6px 0 2px
-        img
-            height 20px
-            position absolute
-            padding: 2px 0 0 5px
-        input
-            width 100%
-            line-height 24px
-            text-indent 30px
-    .bikes-list
-        overflow-x scroll
-        table
-            :nth-child(odd)
-                background-color: lightgrey
-            tr
-                height 30px
-                td
-                    text-align center
+        .form-group
+            margin: 20px 0 0 0
+            img
+                height 20px
+                position absolute
+                padding: 2px 0 0 5px
+            input
+                line-height 24px
+                text-indent 30px
     .delete-col
         width 60px
     .red-x, .edit-icon
         height 20px
         padding-top 4px
         cursor: pointer
+    .bike-list-container
+        @media(min-width: 600px)
+            padding-bottom 5%
+        @media(max-width: 599px)
+            padding-bottom 15%
     .card-container
         position relative
         border-radius 5px
@@ -45,18 +38,12 @@ table
         .edit-icon-small
             margin-right: 7px
 +desktop()
-    .bikes-container
-        col(7/8, offset: 1/8)
     .card-container
         col(1/3, cycle:3)
 +tablet()
-    .bikes-container
-        col(7/8, offset: 1/8)
     .card-container
         col(1/2, uncycle: 3, cycle: 2)
 
 +tablet-portrait-below()
-    .bikes-container
-        width: 100%
     .card-container
         stack()
