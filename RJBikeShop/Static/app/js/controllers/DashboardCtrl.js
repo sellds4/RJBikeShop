@@ -8,9 +8,7 @@ angular.module('RJBikeApp.controllers').controller('DashboardCtrl', ['$scope', '
         currentPageNum: 1,
         pageSize: 24,
         totalPages: null,
-        view: {
-            list: true
-        },
+        list: false,
         showSold: false,
         newBike: {},
         modalShown: false,
@@ -23,6 +21,7 @@ angular.module('RJBikeApp.controllers').controller('DashboardCtrl', ['$scope', '
 
     function init() {
         var s = $scope;
+        console.log($scope)
         s.getPagedBikes(1, s.pageSize, s.showSold);
         s.$on('show-modal', function() {
             s.toggleModal();

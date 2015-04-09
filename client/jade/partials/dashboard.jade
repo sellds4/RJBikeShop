@@ -17,7 +17,7 @@ dashboard-header
                                 input.form-control(ng-model="bikeSearchText")
                 page-bar
                 .bike-list-container
-                    .bikes-list(ng-show="view.list")
+                    .bikes-list(ng-show="list")
                         .table-responsive
                             table.table.table-striped
                                 tr
@@ -44,14 +44,14 @@ dashboard-header
                                         img.edit-icon(ng-click="toggleModal(bike)", src="/Static/app/img/edit-icon.png")
                                     td.text-center
                                         img.red-x(ng-click="deleteBike(bike.Id)", src="/Static/app/img/red-x.png")
-                    .bikes-cards(ng-show="!view.list")
-                        .card-container(ng-repeat="bike in bikeData.BikeList | filter: bikeSearchText")
+                    .bikes-cards(ng-show="!list")
+                        .card-container.col-lg-4.col-md-6.col-xs-12(ng-repeat="bike in bikeData.BikeList | filter: bikeSearchText")
                             .corner-icons
                                 img.red-x-small(ng-click="deleteBike(bike.Id)", src="/Static/app/img/red-x.png")
                                 img.edit-icon-small(ng-click="toggleModal(bike)", src="/Static/app/img/edit-icon.png")
                             .bike-pic(style="height:150px")
                             .description-container
-                                table
+                                table.table.table-striped.table-bordered
                                     tr
                                         th Make:
                                         td {{bike.MakeString}}

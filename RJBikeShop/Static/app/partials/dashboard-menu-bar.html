@@ -9,9 +9,9 @@
               <div class="image-container"><img src="/Static/app/img/bike.png" class="bike-icon"/></div>
               <div class="control-text">View <span ng-show="showSold">Unsold</span><span ng-show="!showSold">Sold</span></div>
             </div>
-            <div ng-click="view.list = !view.list" class="control-container">
+            <div ng-click="list = !list" class="control-container">
               <div class="image-container"><img src="/Static/app/img/double-arrow.png"/></div>
-              <div class="control-text">View <span ng-show="view.list">Cards</span><span ng-show="!view.list">List</span></div>
+              <div class="control-text">View <span ng-show="list">Cards</span><span ng-show="!list">List</span></div>
             </div>
             <div ng-click="showModal()" class="control-container">
               <div class="image-container"><img src="/Static/app/img/plus.png"/></div>
@@ -32,9 +32,9 @@
                   </div>
                 </div>
                 <div class="col-xs-3">
-                  <div ng-click="view.list = !view.list" class="control-container">
+                  <div ng-click="list = !list" class="control-container">
                     <div class="image-container"><img src="/Static/app/img/double-arrow.png"/></div>
-                    <div class="control-text">View <span ng-show="view.list">Cards</span><span ng-show="!view.list">List</span></div>
+                    <div class="control-text">View <span ng-show="list">Cards</span><span ng-show="!list">List</span></div>
                   </div>
                 </div>
                 <div class="col-xs-3">

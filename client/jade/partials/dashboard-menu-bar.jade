@@ -10,12 +10,12 @@ nav
                             .control-text View 
                                 span(ng-show="showSold") Unsold
                                 span(ng-show="!showSold") Sold
-                        .control-container(ng-click="view.list = !view.list")
+                        .control-container(ng-click="list = !list")
                             .image-container
                                 img(src="/Static/app/img/double-arrow.png")
                             .control-text View 
-                                span(ng-show="view.list") Cards
-                                span(ng-show="!view.list") List
+                                span(ng-show="list") Cards
+                                span(ng-show="!list") List
                         .control-container(ng-click="showModal()")
                             .image-container
                                 img(src="/Static/app/img/plus.png")
@@ -35,12 +35,12 @@ nav
                                             span(ng-show="showSold") Unsold
                                             span(ng-show="!showSold") Sold
                                 .col-xs-3
-                                    .control-container(ng-click="view.list = !view.list")
+                                    .control-container(ng-click="list = !list")
                                         .image-container
                                             img(src="/Static/app/img/double-arrow.png")
                                         .control-text View 
-                                            span(ng-show="view.list") Cards
-                                            span(ng-show="!view.list") List
+                                            span(ng-show="list") Cards
+                                            span(ng-show="!list") List
                                 .col-xs-3
                                     .control-container(ng-click="showModal()")
                                         .image-container

@@ -8,9 +8,7 @@ angular.module('RJBikeApp.controllers').controller('DashboardCtrl', ['$scope', '
         currentPageNum: 1,
         pageSize: 24,
         totalPages: null,
-        view: {
-            list: true
-        },
+        list: false,
         showSold: false,
         newBike: {},
         modalShown: false,
