@@ -8,7 +8,7 @@ angular.module('RJBikeApp.directives')
             templateUrl:'./Static/app/partials/page-bar.html',
             link: function (scope, elem, attrs) {
                 var s = scope;
-                function createPageArray(selectedPage) {
+                function createPageArray() {
                     var numOfPages = s.totalPages;
                     s.pageArray = [];
                     for(var i = 1; i <= numOfPages; i++) {
@@ -20,6 +20,9 @@ angular.module('RJBikeApp.directives')
                         return;
                     }
                     s.getPagedBikes(pageNum, s.pageSize, s.showSold)
+                };
+                s.getResults = function(resultNum) {
+                    s.getPagedBikes(s.currentPageNum, resultNum, s.showSold);
                 };
                 scope.$on('create-array', function() {
                     createPageArray();

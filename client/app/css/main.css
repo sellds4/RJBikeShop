@@ -6741,10 +6741,27 @@ button.close {
 .dashboard-controls-container .dashboard-controls-xs .control-container {
   margin: 0 auto;
 }
+.page-container .pagination {
+  margin-bottom: 10px;
+}
+.page-container .results {
+  margin-bottom: 20px;
+}
+.page-container .results .result,
+.page-container .results .result-text {
+  color: #005f9e;
+  display: inline-block;
+  cursor: pointer;
+}
+.page-container .results .result.page-active,
+.page-container .results .result-text.page-active {
+  color: #00396e;
+  font-weight: bold;
+}
 .nav-bar {
   position: fixed;
   right: 10px;
-below(600px)
+tablet-portrait-below()
 }
 .nav-bar .icon-container {
   height: 50px;
