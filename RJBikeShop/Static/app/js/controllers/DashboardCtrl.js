@@ -61,6 +61,7 @@ angular.module('RJBikeApp.controllers').controller('DashboardCtrl', ['$scope', '
     };
 
     $scope.toggleModal = function(bikeObj) {
+        console.log(bikeObj)
         var s = $scope;
         s.modalShown = !s.modalShown;
         if(bikeObj) {

@@ -6511,13 +6511,6 @@ button.close {
 .bike-info-container h4 {
   margin-bottom: 10px;
 }
-.login-container .form-container select,
-.new-user-container .form-container select,
-.bike-info-container .form-container select {
-  width: 100%;
-  height: 25px;
-  text-indent: 1px;
-}
 .login-container .form-container .button-container button,
 .new-user-container .form-container .button-container button,
 .bike-info-container .form-container .button-container button {
@@ -6546,6 +6539,9 @@ button.close {
 .bike-info-container {
   margin-top: 20px;
 }
+.bike-info-container label {
+  color: #005f9e;
+}
 .bike-info-container .intro {
   margin-bottom: 15px;
 }
@@ -6553,25 +6549,37 @@ button.close {
   width: 90%;
   margin: 0 auto;
 }
-.bike-info-container label {
-  color: #005f9e;
-  margin-left: 10px;
+.bike-info-container .form-group {
+  margin-bottom: 5px;
+}
+.bike-info-container .form-group label {
+  margin: 0 0 0 10px;
+}
+.bike-info-container .form-group .form-control {
+  height: 27px;
+}
+.bike-info-container .form-group input {
+  padding: 3px 12px;
+}
+.bike-info-container .form-group select {
+  padding: 3px 12px 3px 7px;
 }
 .bike-info-container .button-container {
-  width: 90%;
   margin-top: 17px;
 }
 .bike-info-container .button-container .checkbox-container {
   float: left;
+  margin-left: 11px;
+  padding-top: 8px;
 }
 .bike-info-container .button-container .checkbox-container .input-label,
 .bike-info-container .button-container .checkbox-container input {
   display: inline-block;
   width: auto;
 }
-.bike-info-container .button-container .checkbox-container .input-label {
+.bike-info-container .button-container .checkbox-container label {
   margin-right: 12px;
-  vertical-align: super;
+  vertical-align: text-bottom;
 }
 .bike-info-container .button-container .checkbox-container input {
   -ms-transform: scale(2);
@@ -6743,7 +6751,7 @@ below(600px)
   width: 50px;
 }
 .ng-modal-overlay {
-  position: absolute;
+  position: fixed;
   z-index: 9999;
   top: 0;
   left: 0;
@@ -6753,17 +6761,20 @@ below(600px)
 }
 .ng-modal-dialog {
   z-index: 10000;
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
+  height: 550px;
   transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   background-color: #fff;
   box-shadow: 4px 4px 80px #000;
-desktop()
-tablet()
-below(600px)
+}
+@media (max-width: 599px) {
+  .ng-modal-dialog {
+    height: 100%;
+  }
 }
 .ng-modal-dialog-content {
   padding: 10px;
@@ -6773,13 +6784,12 @@ below(600px)
   position: absolute;
   top: 3px;
   right: 5px;
-  padding: 5px;
   cursor: pointer;
   font-size: 120%;
   display: inline-block;
   font-weight: bold;
   font-family: 'arial', 'sans-serif';
-  height: 15px;
+  height: 25px;
 }
 body {
   margin: 0;

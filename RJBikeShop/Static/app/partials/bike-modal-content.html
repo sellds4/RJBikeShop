@@ -5,7 +5,7 @@
     <form name="newBikeForm" ng-submit="submitBike()">
       <div class="form-group">
         <label>Make:</label>
-        <select id="new-bike-make" name="new-bike-make" ng-model="newBike.MakeString" ng-required="true">
+        <select id="new-bike-make" name="new-bike-make" ng-model="newBike.MakeString" ng-required="true" class="form-control">
           <option ng-repeat="make in bikeDataValues.makes | orderBy: make" value="{{make}}">{{make}}</option>
         </select>
       </div>
@@ -15,7 +15,7 @@
       </div>
       <div class="form-group">
         <label for="new-bike-type">Type:</label>
-        <select id="new-bike-type" name="new-bike-type" ng-model="newBike.BikeTypeString" ng-required="true">
+        <select id="new-bike-type" name="new-bike-type" ng-model="newBike.BikeTypeString" ng-required="true" class="form-control">
           <option ng-repeat="type in bikeDataValues.types | orderBy: type" value="{{type}}">{{type}}</option>
         </select>
       </div>
@@ -33,22 +33,24 @@
       </div>
       <div class="form-group">
         <label for="new-bike-color">Color:</label>
-        <select id="new-bike-color" name="new-bike-color" ng-model="newBike.ColorString" ng-required="true">
+        <select id="new-bike-color" name="new-bike-color" ng-model="newBike.ColorString" ng-required="true" class="form-control">
           <option ng-repeat="color in bikeDataValues.colors | orderBy: color" value="{{color}}">{{color}}</option>
         </select>
       </div>
       <div class="form-group">
         <label for="new-bike-gender">Gender:</label>
-        <select id="new-bike-gender" name="new-bike-gender" ng-model="newBike.GenderString" ng-required="true">
+        <select id="new-bike-gender" name="new-bike-gender" ng-model="newBike.GenderString" ng-required="true" class="form-control">
           <option ng-repeat="gender in bikeDataValues.genders | orderBy: gender" value="{{gender}}">{{gender}}</option>
         </select>
       </div>
       <div class="button-container">
-        <div class="checkbox-container">
+        <div class="checkbox-container col-6-xs">
           <label for="new-bike-sold">Bike Sold </label>
-          <input type="checkbox" id="new-bike-sold" name="new-bike-sold" ng-model="newBike.Sold" class="form-control"/>
+          <input type="checkbox" id="new-bike-sold" name="new-bike-sold" ng-model="newBike.Sold"/>
         </div>
-        <button type="submit" ng-disabled="newBikeForm.$invalid || doingRequest" ng-class="{'grey-button': doingRequest}">Submit</button>
+        <div class="col-6-xs">
+          <button type="submit" ng-disabled="newBikeForm.$invalid || doingRequest" ng-class="{'grey-button': doingRequest}">Submit</button>
+        </div>
       </div>
     </form>
   </div>

@@ -3,10 +3,6 @@
     h4
         margin-bottom 10px
     .form-container 
-        select
-            width 100%
-            height 25px
-            text-indent 1px
         .button-container
             button
                 float right
@@ -22,25 +18,35 @@
 
 .bike-info-container
     margin-top 20px
+    label
+        color $dark-blue
     .intro
         margin-bottom 15px
     .input-container
         width 90%
         margin 0 auto
-    label
-        color $dark-blue
-        margin-left 10px
+    .form-group
+        margin-bottom 5px
+        label
+            margin 0 0 0 10px
+        .form-control
+            height 27px
+        input
+            padding 3px 12px
+        select
+            padding 3px 12px 3px 7px
     .button-container
-        width 90%
         margin-top 17px
         .checkbox-container
             float left
+            margin-left 11px
+            padding-top 8px
             .input-label, input
                 display inline-block
                 width auto
-            .input-label
+            label
                 margin-right 12px
-                vertical-align super
+                vertical-align text-bottom
             input
                 -ms-transform scale(2)
                 -moz-transform scale(2)

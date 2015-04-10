@@ -4,14 +4,14 @@
         form(name="newBikeForm", ng-submit="submitBike()")
             .form-group
                 label Make:
-                select(id="new-bike-make", name="new-bike-make", ng-model="newBike.MakeString", ng-required="true")
+                select.form-control(id="new-bike-make", name="new-bike-make", ng-model="newBike.MakeString", ng-required="true")
                     option(ng-repeat="make in bikeDataValues.makes | orderBy: make", value="{{make}}") {{make}}
             .form-group
                 label(for="new-bike-model") Model:
                 input.form-control(type="text", id="new-bike-model", name="new-bike-model", ng-model="newBike.Model", ng-required="true", autocomplete="off")
             .form-group
                 label(for="new-bike-type") Type:
-                select(id="new-bike-type", name="new-bike-type", ng-model="newBike.BikeTypeString", ng-required="true")
+                select.form-control(id="new-bike-type", name="new-bike-type", ng-model="newBike.BikeTypeString", ng-required="true")
                     option(ng-repeat="type in bikeDataValues.types | orderBy: type", value="{{type}}") {{type}}
             .form-group
                 label(for="new-bike-size") Size:
@@ -24,15 +24,16 @@
                 input.form-control(type="phone", id="new-bike-price", name="new-bike-price", ng-model="newBike.Price", ng-required="true", autocomplete="off")
             .form-group
                 label(for="new-bike-color") Color:
-                select(id="new-bike-color", name="new-bike-color", ng-model="newBike.ColorString", ng-required="true")
+                select.form-control(id="new-bike-color", name="new-bike-color", ng-model="newBike.ColorString", ng-required="true")
                     option(ng-repeat="color in bikeDataValues.colors | orderBy: color", value="{{color}}") {{color}}
             .form-group
                 label(for="new-bike-gender") Gender:
-                select(id="new-bike-gender", name="new-bike-gender", ng-model="newBike.GenderString", ng-required="true")
+                select.form-control(id="new-bike-gender", name="new-bike-gender", ng-model="newBike.GenderString", ng-required="true")
                     option(ng-repeat="gender in bikeDataValues.genders | orderBy: gender", value="{{gender}}") {{gender}}
             .button-container
-                .checkbox-container
+                .checkbox-container.col-6-xs
                     label(for="new-bike-sold") Bike Sold 
-                    input.form-control(type="checkbox", id="new-bike-sold", name="new-bike-sold", ng-model="newBike.Sold")
-                button(type="submit", ng-disabled="newBikeForm.$invalid || doingRequest", ng-class="{'grey-button': doingRequest}") Submit
+                    input(type="checkbox", id="new-bike-sold", name="new-bike-sold", ng-model="newBike.Sold")
+                .col-6-xs
+                    button(type="submit", ng-disabled="newBikeForm.$invalid || doingRequest", ng-class="{'grey-button': doingRequest}") Submit
 

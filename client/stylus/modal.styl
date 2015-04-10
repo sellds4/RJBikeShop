@@ -1,5 +1,5 @@
 .ng-modal-overlay  /* A dark translucent div that covers the whole screen */
-    position absolute
+    position fixed
     z-index 9999
     top 0
     left 0
@@ -9,20 +9,17 @@
 
 .ng-modal-dialog  /* A centered div above the overlay with a box shadow. */
     z-index 10000
-    position absolute
+    position fixed
     top 50%
     left 50%
+    height 550px
     transform translate(-50%, -50%)
     -webkit-transform translate(-50%, -50%)
     -moz-transform translate(-50%, -50%)
     background-color #fff
     box-shadow 4px 4px 80px #000
-    +desktop()
-        width 40%
-    +tablet()
-        width 60%
-    +tablet-portrait-below()
-        width 90%
+    @media(max-width: 599px)
+        height 100%
 
 .ng-modal-dialog-content  
     padding 10px
@@ -32,10 +29,10 @@
     position absolute
     top 3px
     right 5px
-    padding 5px
     cursor pointer
     font-size 120%
     display inline-block
     font-weight bold
     font-family 'arial', 'sans-serif'
-    height 15px
+    height 25px
+    
