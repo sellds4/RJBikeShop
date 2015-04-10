@@ -10,7 +10,7 @@ angular.module('RJBikeApp.controllers').controller('DashboardCtrl', ['$scope', '
         lowPageSize: 24,
         totalPages: null,
         totalBikeCount: null,
-        list: false,
+        list: true,
         showSold: false,
         newBike: {},
         modalShown: false,
