@@ -1649,7 +1649,7 @@ pre code {
 }
 @media (min-width: 600px) {
   .container {
-    width: 750px;
+    width: 560px;
   }
 }
 @media (min-width: 992px) {
@@ -6749,6 +6749,9 @@ below(600px)
 .nav-bar .icon-container {
   height: 50px;
   width: 50px;
+}
+body.ng-modal-overlay {
+  overflow: hidden;
 }
 .ng-modal-overlay {
   position: fixed;

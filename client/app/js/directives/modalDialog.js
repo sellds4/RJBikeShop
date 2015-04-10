@@ -20,6 +20,10 @@ angular.module('RJBikeApp.directives')
                 scope.hideModal = function() {
                     scope.show = false;
                 };
+                scope.$watch('show', function(result) {
+                    console.log('here')
+                    result ? $('body').css('overflow', 'hidden') : $('body').css('overflow', 'visible');
+                });
                 scope.$on('close-modal', function() {
                     scope.hideModal();
                 });
